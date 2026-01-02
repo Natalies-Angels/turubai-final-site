@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FABRi × Barakoa — Fashion Curation</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN-->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            baseblack: "#0e0e0f",
+            ember: "#d12a2a",
+            ochre: "#c48a2e",
+            tealdeep: "#0f6a63",
+            graysoft: "#939393"
+          },
+          fontFamily: {
+            display: ["Impact", "Anton", "Arial Black", "sans-serif"],
+            body: ["Inter", "system-ui"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .fade {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes scrollLine {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.animate-scroll-line {
+  animation: scrollLine 2.5s ease-in-out infinite;
+}
+
+  </style>
+</head>
+
+<body class="bg-black text-white">
+  <!-- ░░░ NAVBAR ░░░ -->
+<header class="fixed top-0 left-0 right-0 z-40">
+  <nav class="backdrop-blur-xl bg-black/40 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+
+        <!-- Navigation -->
+        <div class="hidden sm:flex items-left gap-8 text-graysoft">
+          <a href="FABRI\fabri.html" class="text-sm hover:text-tealdeep transition">about FABRi</a>
+          <a href="FABRI\fabri-in-barakoa.html" class="text-sm hover:text-ochre transition">FABRi in barakoa</a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="mobileToggle" class="md:hidden p-2 rounded-md hover:bg-white/10">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-black/60">
+      <div class="px-4 py-4 flex flex-col gap-3">
+          <a href="FABRI\fabri.html" class="text-sm hover:text-tealdeep transition">about FABRi</a>
+          <a href="FABRI\fabri-in-barakoa.html" class="text-sm hover:text-ochre transition">FABRi in barakoa</a>
+      </div>
+    </div>
+
+  </nav>
+</header>
+
+  <main class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+
+    <!-- Hero -->
+    <section class="max-w-3xl fade">
+      <p class="text-xs tracking-widest  text-gray-400 mb-4">
+        KALEKYE x FABRi × BARAKOA
+      </p>
+
+      <h1 class="text-4xl md:text-6xl leading-tight mb-6">
+        Fashion Curation
+      </h1>
+
+      <p class="text-gray-300 max-w-xl mx-auto">
+        Where theme becomes silhouette.
+      </p>
+
+    </section>
+    <div id="scroll-indicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/70 transition-opacity duration-700">
+        <span class="font-serif text-sm text-graysoft tracking-wide mb-2">
+          keep scrolling :)
+        </span>
+        <span class="block w-px h-8 bg-white/50 animate-scroll-line"></span>
+      </div>
+  </main>
+
+  <section class="max-w-3xl mx-auto px-6 py-24 space-y-20">
+
+    <!-- How you come in -->
+    <div class="fade">
+      <h2 class="text-2xl mb-4">How you come in</h2>
+      <p class="text-gray-300 leading-relaxed">
+        You participate in Barakoa through a partnership with <a href="FABRI\fabri.html" class="underline text-ochre">FABRi</a> as a
+        <span class="text-white">Fashion Curator</span>.
+        <br/><br/>
+        This is about shaping how Barakoa lives on the body — through clothing, accessories, and styling.
+      </p> <br>
+      <p class="text-gray-300 leading-relaxed">
+        Your work will be to work with to FABRi conceptualize, select, and present fashion in a 
+        compelling narrative, transforming it from mere clothing into an artistic experience that 
+        aligns with barakoa's message and theme.</p>
+    </div>
+    <!-- What this involves -->
+    <div class="fade">
+      <h2 class="text-2xl mb-4">What this looks like</h2>
+      <p class="text-gray-300 leading-relaxed">
+        As a Fashion Curator, you will collaborate closely with FABRi to bring the NiloFunk aesthetic to life through fashion.
+        <br/><br/>
+        Your contribution supports:
+      </p>
+
+      <ul class="mt-6 space-y-3 text-gray-300 list-disc list-inside">
+        <li>Translating Nilofunk into silhouettes and styling language</li>
+        <li>Developing the Barakoa fashion line and character costumes</li>
+        <li>Working with partner fashion houses on execution</li>
+        <li>Maintaining coherence across audience dress code and performers</li>
+      </ul>
+    </div>
+
+
+    <!-- Communication -->
+    <div class="fade">
+      <h2 class="text-2xl mb-4">How we’ll communicate</h2>
+      <p class="text-gray-300 leading-relaxed">
+        FABRi will share context monthly via email, supported by short voice notes
+        for nuance.
+        <br/><br/>
+        Alignment continues through text or scheduled calls — paced, intentional,
+        and respectful of your practice.
+      </p>
+    </div>
+
+  </section>
+  <!-- Appendix -->
+  <section class="bg-white text-black py-24 px-6 fade-in">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-3xl mb-10 text-left">Who You’ll Work Closely With</h3>
+
+      <div class="space-y-8 text-sm leading-relaxed">
+        <div>
+          <h4 class="font-semibold mb-2">Experience & Style Curator</h4>
+          <p>
+            You’ll align closely with the Experience & Style Curator to ensure that fashion,
+            styling, and cultural atmosphere reinforce one another across the experience.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-2">FABRi (Fabrication Practice)</h4>
+          <p>
+            FABRi anchors concept, material logic, and design direction. Your role adds craft,
+            intuition, and fashion intelligence within that structure.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-2">Partner Fashion Houses</h4>
+          <p>
+            Where execution is shared, you collaborate with partner houses doing hands-on
+            production, helping maintain coherence across pieces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="py-12 text-center text-graysoft text-sm">
+  FABRi © Turubai Tribe — Building memory through material.
+</footer>
+
+
+  <!-- Fade-in Script -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+  </script>
+  <!-- scroll script -->
+  <script>
+  const indicator = document.getElementById('scroll-indicator');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      indicator.style.opacity = '0';
+    } else {
+      indicator.style.opacity = '1';
+    }
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FABRI — A Turubai Fabrication Practice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0e0e0e;
+      color: #f5f5f5;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+     @keyframes scrollLine {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.animate-scroll-line {
+  animation: scrollLine 2.5s ease-in-out infinite;
+}
+
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center justify-center text-center px-6">
+    <div class="max-w-4xl fade-in">
+      <h1 class="text-6xl md:text-7xl mb-6">FABRi</h1>
+      <p class="uppercase tracking-widest text-sm text-gray-400 mb-8">
+        A Turubai Fabrication Practice
+      </p>
+      <p class="text-xl leading-relaxed text-gray-200 italic">
+       where making is how we take responsibility
+      </p>
+    </div>
+        <div id="scroll-indicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/70 transition-opacity duration-700">
+        <span class="font-serif text-sm text-graysoft tracking-wide mb-2">
+          keep scrolling :)
+        </span>
+        <span class="block w-px h-8 bg-white/50 animate-scroll-line"></span>
+      </div>
+
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-14 px-6 flex justify-center">
+    <div class="max-w-3xl fade-in space-y-6">
+      <p>
+        FABRi is Turubai’s fabrication practice.
+      </p>
+      <p>
+        It works with material, form, and function to translate cultural questions into things that can be worn, touched, inhabited, or gathered around. These things live close to bodies and spaces. They carry intention. They carry context.
+      </p>
+      <p>
+        FABRi approaches making as a cultural act. Material choices are never neutral. They hold labour, environment, access, memory, and power. FABRi designs with these realities in mind — creating work that is functional, inclusive, and grounded in lived experience.
+      </p>
+    </div>
+  </section>
+
+  <!-- GUIDING PRINCIPLES -->
+  <section class="py-28 bg-white text-black px-6 flex justify-center">
+    <div class="max-w-4xl fade-in">
+      <h2 class="text-5xl mb-16 text-center">What Guides FABRi</h2>
+
+      <div class="space-y-12 text-lg leading-relaxed">
+        <div>
+          <h3 class="text-2xl mb-2">Ecojustice</h3>
+          <p>
+            FABRi takes responsibility for material impact — sourcing, production, scale, and waste. The goal is not perfection, but care. Thoughtful decisions that respect environment, labour, and longevity.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl mb-2">Inclusivity</h3>
+          <p>
+            FABRi designs for real bodies, real movement, and real access needs. Function is central. Difference is treated as a design condition, not a problem to be solved later.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl mb-2">Creativity</h3>
+          <p>
+            FABRi allows imagination to sit alongside use. Each piece holds space for expression, symbolism, and narrative, while remaining grounded in function.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW FABRI WORKS -->
+  <section class="py-28 px-6 flex justify-center">
+    <div class="max-w-4xl fade-in space-y-10">
+      <h2 class="text-5xl text-center mb-10">How FABRi Works</h2>
+
+      <div class="text-lg leading-relaxed space-y-6">
+        <p class="font-serif text-xl">Series, Not Products</p>
+        <p>
+          FABRi organises its work through series, not collections or campaigns.
+        </p>
+        <p>
+          A series is a way of responding to a cultural question using material. It allows FABRi to move across forms while maintaining a coherent practice.
+        </p>
+
+        <ul class="list-disc list-inside space-y-2 text-gray-300">
+          <li>Fashion — what we wear, how we appear, how bodies move</li>
+          <li>Spaces — how environments hold people</li>
+          <li>Objects & Print — what we touch, hold, circulate, and keep</li>
+        </ul>
+
+        <p>
+          A single cultural moment may activate one or multiple series at once.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FABRI WITHIN TURUBAI -->
+  <section class="py-28 bg-white text-black px-6 flex justify-center">
+    <div class="max-w-3xl fade-in text-lg leading-relaxed space-y-6">
+      <h2 class="text-5xl text-center mb-10">FABRi Within Turubai</h2>
+      <p>
+        FABRi sits within Turubai as the practice that translates collective ideas into material form.
+      </p>
+      <p>
+        It allows people to engage with cultural questions through use, movement, and presence.
+      </p>
+      <p class="font-serif text-xl">
+        FABRi does not resolve tension.<br/>
+        It designs within it.
+      </p>
+    </div>
+  </section>
+
+  <!-- JS Fade In -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
