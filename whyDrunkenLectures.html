@@ -1,201 +1,519 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>FABRI × BARAKOA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>How You Come In — Drunken Lectures × Barakoa</title>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: "#121212",
-            bone: "#EAE6DC",
-            ash: "#A1A1A1",
-            ember: "#C83A2E",
-            ochre: "#C48A2E"
-          },
-          fontFamily: {
-            display: ["Playfair Display", "serif"],
-            body: ["Inter", "system-ui"]
-          }
-        }
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        baseblack: "#0e0e0f",
+        ember: "#d12a2a",
+        ochre: "#c48a2e",
+        tealdeep: "#0f6a63",
+        bone: "#e8e4d8",
+        graysoft: "#8c8c8c"
+      },
+      fontFamily: {
+        display: ["Impact","Anton","Arial Black","sans-serif"],
+        body: ["Inter","system-ui"]
       }
     }
-  </script>
+  }
+}
+</script>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: Inter, system-ui, sans-serif;
-      background-color: #121212;
-      color: #EAE6DC;
-    }
+<style>
+.rule { height:1px; background:rgba(255,255,255,.12); margin:4rem 0; }
+.letter p { margin-bottom:1.8rem; line-height:1.7; }
+.side-nav a { display:block; margin-bottom:.75rem; opacity:.6; }
+.side-nav a:hover { opacity:1; }
 
-    h1, h2, h3 {
-      font-family: "Playfair Display", serif;
-    }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+}
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+
+.partner-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 1.5rem;
+  transform: rotate(var(--r));
+  transition: all .2s ease;
+}
+
+
+.partner-card:hover {
+  transform: rotate(0deg) scale(1.03);
+  border-color: rgba(255,255,255,0.35);
+}
+
+
+.partner-name {
+  font-family: Impact, sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: .05em;
+}
+
+
+.partner-link {
+  font-size: .75rem;
+  margin-top: .5rem;
+  opacity: .6;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal.show { display: flex; }
+
+
+.modal-box {
+  background: #0e0e0f;
+  padding: 3rem;
+  max-width: 900px;
+  width: 90%;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+</style>
 </head>
 
-<body>
 
-<!-- HERO -->
-<section class="relative flex items-center justify-center text-center px-6 py-24 md:py-32">
-  <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(circle_at_top,_#ffffff_1px,_transparent_1px)] bg-[size:24px_24px]"></div>
+<body class="bg-baseblack text-gray-200 font-body antialiased">
 
-  <div class="max-w-3xl fade-in">
-    <h1 class="text-4xl md:text-6xl mb-6 tracking-tight">
-      FABRI × BARAKOA
-    </h1>
-    <p class="text-lg text-ash">
-      A maskerade, crafted.
+
+<!-- SIDE NAV -->
+<aside class="fixed top-0 left-0 h-full w-56 px-6 py-16 border-r border-white/10 side-nav hidden lg:block">
+  <p class="text-xs uppercase tracking-widest text-graysoft mb-6">On this page</p>
+  <a href="#letter">Dear Drunken Lectures</a>
+  <a href="#what">What is Barakoa</a>
+  <a href="#why">Why Barakoa</a>
+  <a href="#experience">The Experience</a>
+  <a href="#flow">Event Flow</a>
+  <a href="#you">Where You Come In</a>
+  <a href="#minds">The Minds</a>
+  <a href="#partners">Partners</a>
+  <a href="#close">Close</a>
+</aside>
+
+
+<main class="ml-0 lg:ml-56 px-8 sm:px-12 md:px-20 max-w-[1100px]">
+
+
+<!-- LETTER -->
+<section id="letter" class="pt-32 pb-12">
+  <p class="uppercase tracking-widest text-xs text-graysoft mb-4">How You Come In</p>
+  <h1 class="font-display text-[4.5rem] leading-none text-bone mb-10">
+    Dear Drunken Lectures,
+  </h1>
+
+
+  <div class="letter max-w-2xl pt-10">
+    <p>
+      We’re reaching out to explore a partnership with you around Barakoa — a conscious, 
+      culture-led gig built within <a href="index.html" class="underline text-ember">Turubai</a>, and hosted in collaboration with <a href="nuke.html" class="underline text-ember">NUKe</a>,
+      a Turubai Lab project focused on sound, culture, ritual and underground creative practice.
+    </p>
+
+     <p>
+     We’re hosting two live editions in Eldoret in 2026: a teaser in March and a main edition in June...
+     and we’d love to build with you as part of how consciousness shows up inside those gigs.
+
+    </p>
+    <p>
+      Below is a brief on Barakoa, the experience, and where you come in.
+      We hope it resonates.
     </p>
   </div>
 </section>
 
-<!-- BARAKOA CONTEXT -->
-<section class="py-20 md:py-28 px-6 flex justify-center">
-  <div class="max-w-3xl fade-in space-y-6 text-base md:text-lg leading-relaxed">
-    <h2 class="text-4xl md:text-5xl mb-6">Barakoa</h2>
 
-    <p><a href="barakoa.html" class="text-ochre underline">Barakoa</a> is a masquerade.</p>
+<div class="rule"></div>
+
+
+<!-- WHAT -->
+<section id="what" class="pb-24">
+  <h2 class="font-display text-5xl text-bone mb-10">What is Barakoa?</h2>
+
+
+  <div class="letter max-w-2xl">
+    <p>
+      Barakoa is a <strong>(23+) immersive popup experience</strong>.
+      A temporary world built from temporary boxes.
+    </p>
+    <p>
+      It is a space to explore emotional masks;
+      the ways we hide our true feelings from ourselves and others.
+    </p>
 
     <p>
-      Not in costume alone; but in behaviour, protection, performance, and silence.
+      Barakoa is a ritual of release.
+      A container to express what we often suppress in daily life:
+      vulnerability, tenderness, fear, longing, and love.
     </p>
 
     <p>
-      It explores the masks people wear around love, fear, and the quiet things we don’t say —
-      and what happens when those masks are held, softened, or briefly removed.
+      It is designed for adults who are ready to engage emotionally, creatively, and physically — 
+      without spectacle, without pressure, and without needing to perform clarity.
+    </p>
+    <p>
+      Through live music, theatre, fashion, installations, and ritual play,
+      Barakoa creates space to soften what we suppress.
     </p>
 
-    <p class="text-ochre">
-      How do we mask ourselves in order to survive love, fear, and vulnerability?
+
+    <p>
+      Theme for Barakoa 2026:<br>
+      <strong class="text-ochre">Love, Fear & the Quiet.</strong>
+    </p>
+  </div>
+
+
+  <h3 id="why" class="font-display text-3xl text-bone mt-16 mb-6">Why Barakoa?</h3>
+
+
+  <div class="letter max-w-2xl">
+    
+    <p>
+      Barakoa is a Swahili word for masks.
+      The ones we wear to survive. To belong.
+      To stay safe.
+      To be seen...or to disappear.
     </p>
 
-    <div class="space-y-3 text-ash">
-      <p>Six behavioural archetypes</p>
-      <p>A shared dress code</p>
-      <p>Original Barakoa sound (Nilofunk)</p>
-      <p>A live, embodied environment</p>
-    </div>
+    <p>
+      In daily life, these masks are often invisible to us. 
+      We wear them instinctively, switching them on and off 
+      depending on where we are, who we’re with, and what 
+      we fear losing.
+    </p>
+
+    <p>
+      Barakoa exists to bring awareness to these masks,
+      and let them soften through art.
+    </p>
+
+    <p>
+      For this edition, the experience is shaped around <strong>six emotional masks </strong>
+       that many of us move through in relationships, community, and solitude.
+    </p>
+
+    <p>
+      Barakoa is a ritual for our times.
+      A space to feel deeply, express honestly, and connect authentically.
+    </p>
   </div>
 </section>
 
-<!-- HOW FABRI ENTERS -->
-<section class="py-20 md:py-28 px-6 bg-bone text-ink flex justify-center">
-  <div class="max-w-4xl fade-in space-y-6 text-base md:text-lg leading-relaxed">
-    <h2 class="text-4xl md:text-5xl mb-8">How Fabri Enters Barakoa</h2>
 
-    <p>
-      Fabri crafts the physical language of the maskerade — translating Barakoa’s ideas into material form.
-    </p>
+<div class="rule"></div>
 
-    <p>
-      Fashion becomes the first site of meaning: it sits on the body, regulates exposure, and moves with emotion.
-    </p>
 
-    <div class="space-y-2 text-ash">
-      <p>— sits on the body</p>
-      <p>— regulates protection</p>
-      <p>— responds to sound and time</p>
-    </div>
+<!-- EXPERIENCE -->
+<section id="experience" class="pb-12">
+  <h2 class="font-display text-5xl text-bone mb-10">The Barakoa Experience</h2>
+
+
+  <div class="letter max-w-2xl">
+    <p><strong>March:</strong> private, invite-only teaser ritual.</p>
+    <p><strong>June:</strong> full ceremony. All boxes active.</p>
   </div>
+
+
+  <div id="flow" class="mt-12 flex gap-6 mb-12">
+    <button onclick="openModal('marEventModal')" class="bg-ochre text-black px-8 py-6 font-bold">
+      March Flow
+    </button>
+    <button onclick="openModal('juneEventModal')" class="bg-tealdeep text-bone px-8 py-6 font-bold">
+      June Flow
+    </button>
+  </div>
+
+  <p class="text-graysoft">Barakoa is built by a tribe of creatives, cultural curators, and underground influencers who move across music, fashion, visual art, and digital culture.</p>
 </section>
 
-<!-- NILOFUNK -->
-<section class="py-24 px-6 bg-ink text-bone flex justify-center">
-  <div class="max-w-6xl fade-in space-y-16">
 
-    <header class="max-w-3xl space-y-6">
-      <h2 class="text-4xl md:text-5xl">The Barakoa Aesthetic Theme</h2>
-      <p class="text-lg text-ash">
-        NiloFunk is the aesthetic language guiding Barakoa’s music, fashion, and styling.
-      </p>
-    </header>
+<div class="rule"></div>
 
-    <!-- Image-led principles -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      <div class="space-y-4">
-        <div class="h-72 bg-neutral-800"></div>
-        <h3 class="text-xl">Blanket Logic</h3>
-        <p class="text-ash text-sm">
-          Outerwear as protection, warmth, and identity — draped, not tailored.
+
+<!-- WHY WE ARE REACHING OUT -->
+<section id="you" class="pb-20">
+  <h2 class="font-display text-5xl text-bone mb-10">Why We're Reaching Out,</h2>
+
+
+  <div class="letter max-w-2xl">
+    <p>
+        We’re reaching out because we’d like Drunken Lectures to feature within both Barakoa gigs, 
+        as a structured, intentional lecture moment that fits the rhythm and politics of the experience.
+    </p>
+
+    <p>
+        Drunken Lectures sits at a rare intersection we care deeply about:
+    </p>
+    <ul class=" mb-6 text-graysoft">
+      <li>• clarity without moralising, </li>
+      <li>• intelligence without stiffness,</li>
+      <li>• and learning that doesn’t interrupt enjoyment...
+        it deepens it.</li>
+    </ul>
+
+    <p>That alignment is why we see Drunken Lectures as a natural collaborator within Barakoa’s conscious design
+    </p>
+</div>
+</section>
+
+<div class="rule"></div>
+
+<!-- DRUNKEN LECTURES IN THE TEASER -->
+<section id="you" class="pb-20">
+  <h2 class="font-display text-5xl text-bone mb-10">Drunken Lectures in the Teaser Gig</h2>
+    <h3 id="why" class="font-display text-2xl text-ochre mt-8 mb-6">Topic: <br> Oontzology: The Ontology of Oontz</h3>  
+    <div class="letter max-w-2xl">  
+        <p>
+            For the March edition, Drunken Lectures would feature as a live lecture moment focused on 
+            The Ontology of Oontz.
         </p>
-      </div>
-
-      <div class="space-y-4">
-        <div class="h-72 bg-neutral-700"></div>
-        <h3 class="text-xl">Layering</h3>
-        <p class="text-ash text-sm">
-          Garments added or removed across heat, rain, night, and movement.
+        <p>
+            At this stage, Barakoa is actively building an original sound identity for the gig --
+            what we’re calling the <strong class="text-ochre font-bold">NiloFunk</strong>.
         </p>
-      </div>
-
-      <div class="space-y-4">
-        <div class="h-72 bg-neutral-800"></div>
-        <h3 class="text-xl">Flow & Volume</h3>
-        <p class="text-ash text-sm">
-          Clothing that responds to wind, walking, dancing, sitting.
+        <p>
+            This process draws from:
         </p>
-      </div>
+        <ul class=" mb-6 text-graysoft">
+          <li>• Nilotic musical traditions, </li>
+          <li>• AfroFunk structures and groove memory, </li>
+          <li>• Repetition, trance, and neurological response to rhythm</li>
+          <li>• Dance-floor psychology</li>
+        </ul>
+        <p>
+            The lecture becomes a way to open up this process publicly,
+            as an accessible, playful dissection of why certain sounds move bodies, 
+            how rhythm becomes culture, and how underground music carries meaning beyond entertainment.
+        </p>
+
+        <p>This lecture aligns with:</p>
+        <ul class=" mb-6 text-graysoft">
+          <li>• Live sound exploration happening at the gig </li>
+          <li>• Early audience exposure to the Barakoa sonic language </li>
+          <li>• Drunken Lectures’ ability to make complex ideas land lightly</li>
+        </ul>
     </div>
-
-  </div>
 </section>
 
-<!-- MASKS -->
-<section class="py-20 md:py-28 px-6 flex justify-center">
-  <div class="max-w-4xl fade-in space-y-6 text-base md:text-lg leading-relaxed">
-    <h2 class="text-4xl md:text-5xl mb-6">The Masks Behind the Story</h2>
+<div class="rule"></div>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-ash">
-      <p>The Keeper</p>
-      <p>The Justifier</p>
-      <p>The Silencer</p>
-      <p>The Savior</p>
-      <p>The Mirror</p>
-      <p>The Ghost</p>
+<!-- DRUNKEN LECTURES IN THE MAIN GIG -->
+<section id="you" class="pb-20">
+  <h2 class="font-display text-5xl text-bone mb-10">Drunken Lectures in the Main Gig</h2>
+    <h3 id="why" class="font-display text-2xl text-ochre mt-8 mb-6">Topic: <br> The Mole, Alcohol, and I</h3>  
+    <div class="letter max-w-2xl">  
+        <p>
+            This session would be an exclusive, intimate Drunken Lecture experience, 
+            hosted ahead of the main (June) gig.
+        </p>
+        <p>
+            This session grows out of very real nights ... mixing drinks without understanding 
+            how alcohol actually works, forgetting to hydrate, misjudging strength, and paying for it the next day.
+        </p>
+        <p>The Mole, Alcohol, and I uses simple science and honest experience to unpack how alcohol concentration, mixing, dilution, and pacing affect the body, so people can make better choices while still enjoying themselves.</p>
+        <p>
+            The session would be structured as:
+        </p>
+        <ul class=" mb-6 text-graysoft">
+          <li>• Live beer crafting and tasting </li>
+          <li>• Practical discussion around mixing, pacing, and awareness</li>
+        </ul>
+        <p>This lecture aligns with:</p>
+        <ul class=" mb-6 text-graysoft">
+          <li>• Learning how to drink and mix consciously, without killing the vibe </li>
+          <li>• Understanding alcohol in a way that prevents hard comedowns and regret</li>
+          <li>• Barakoa’s commitment to informed enjoyment and care for the body</li>
+        </ul>
+
+        <p>
+            Both Barakoa editions will feature Drunken Lectures in a <strong class="text-ochre font-bold">panel-style format</strong>, with each session tailored to its moment and purpose
+        </p>
     </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- WHAT WE'RE PROPOSING -->
+<section id="you" class="pb-20">
+  <h2 class="font-display text-5xl text-bone mb-10">What We’re Proposing</h2>
+    <div class="letter max-w-2xl">        
+        <p>
+            In simple terms:
+        </p>
+        <ul class=" mb-6 text-graysoft">
+          <li>• Drunken Lectures features inside both Barakoa editions </li>
+          <li>• March: live lecture within the gig (Ontology of Oontz)</li>
+          <li>• June: exclusive pre-gig lecture + crafting experience (The Mole, Alcohol, and I)</li>
+          <li>• Format, tone, and delivery remain true to Drunken Lectures’ voice</li>
+        </ul>
+    </div>
+</section>
+
+<div class="rule"></div>
+
+
+<!-- MINDS -->
+<section id="minds" class="pb-24">
+  <h2 class="font-display text-5xl text-bone mb-10">The Minds Behind This</h2>
+  <p class="max-w-2xl text-graysoft">NUKe · Turubai · Qoded · Zen Keg</p>
+</section>
+
+
+<div class="rule"></div>
+
+
+<!-- PARTNERS -->
+<section id="partners" class="pb-24">
+  <h2 class="font-display text-5xl text-bone mb-10">Partners</h2>
+    <p class="text-graysoft mb-10">Barakoa is co-created with artists and creatives who already have engaged, niche audiences.</p>
+
+  <div class="partner-grid">
+    <a href="https://www.instagram.com/wagwan.eld" target="_blank" class="partner-card" style="--r:-3deg">
+      <div class="partner-name">Wagwan Eld</div>
+      <div class="partner-link">enter profile</div>
+    </a>
+
+
+    <a href="https://www.instagram.com/kivinya_kaloki" target="_blank" class="partner-card" style="--r:2deg">
+      <div class="partner-name">Kivinya wa Kaloki</div>
+      <div class="partner-link">enter profile</div>
+    </a>
+
+
+    <a href="https://www.instagram.com/kemboisang" target="_blank" class="partner-card" style="--r:-1deg">
+      <div class="partner-name">kembizzo</div>
+      <div class="partner-link">enter profile</div>
+    </a>
+
+
+    <a href="https://www.instagram.com/ayanna.ke" target="_blank" class="partner-card" style="--r:4deg">
+      <div class="partner-name">Ayanna.ke</div>
+      <div class="partner-link">enter profile</div>
+    </a>
+
+
+    <!-- <a href="https://www.instagram.com/daniel_njugi" target="_blank" class="partner-card" style="--r:-4deg">
+      <div class="partner-name">Daniel Njugi</div>
+      <div class="partner-link">enter profile</div>
+    </a> -->
+
+
+    <a href="https://www.instagram.com/_kangoga" target="_blank" class="partner-card" style="--r:1deg">
+      <div class="partner-name">rono sax</div>
+      <div class="partner-link">enter profile</div>
+    </a>
   </div>
 </section>
 
-<!-- FOOTER -->
-<section class="py-20 px-6 bg-bone text-ink flex justify-center">
-  <div class="max-w-3xl fade-in space-y-4 text-base md:text-lg">
-    <p>
-      Fabri, Barakoa, and Nilofunk exist as a shared system — where fashion, sound, behaviour, and ritual meet.
-    </p>
+
+<div class="rule"></div>
+
+
+<!-- CLOSE -->
+<section id="close" class="pb-40">
+  <h2 class="font-display text-5xl text-bone mb-10">Closing</h2>
+
+
+  <div class="letter max-w-2xl">
+    <p>If this resonates...we build together.</p>
+    <p>Let us know if this aligns and we’ll set up a virtual meet.</p>
   </div>
 </section>
 
-<!-- JS -->
+
+<footer class="pb-12 text-sm text-graysoft">
+  <a href="nuke.html" class="underline mr-4">NUKe</a>
+  <a href="index.html" class="underline mr-4">turubai</a>
+  <a href="barakoa.html" class="underline">barakoa</a>
+</footer>
+
+
+</main>
+
+
 <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+function openModal(id){ document.getElementById(id).classList.add("show"); }
+function closeModal(id){ document.getElementById(id).classList.remove("show"); }
 </script>
+
+<!-- MAR EVENT MODAL -->
+<div id="marEventModal" class="modal">
+  <div class="modal-box">
+    <button onclick="closeModal('marEventModal')" class="mb-6 underline text-graysoft">
+      ✕ CLOSE
+    </button>
+
+
+    <h3 class="font-display text-4xl text-bone mb-6">
+      March Teaser Ritual
+    </h3>
+
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      A private, invite-only gathering for collaborators.
+      This is where we test sound, flow, pacing, and emotional temperature.
+    </p>
+
+
+    <ul class="space-y-2 text-gray-400">
+      <li>• Meet & Greet</li>
+      <li>• Sound & Mic Check</li>
+      <li>• Live experimentation</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- JUNE EVENT MODAL -->
+<div id="juneEventModal" class="modal">
+  <div class="modal-box">
+    <button onclick="closeModal('juneEventModal')" class="mb-6 underline text-graysoft">
+      ✕ CLOSE
+    </button>
+
+
+    <h3 class="font-display text-4xl text-bone mb-6">
+      June Full Ceremony
+    </h3>
+
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      The full Barakoa experience.
+      All boxes active. Theatre, fashion, music, ritual, release.
+    </p>
+
+
+    <ul class="space-y-2 text-gray-400">
+      <li>• Marketplace + pop-ups</li>
+      <li>• Theatre ritual</li>
+      <li>• NiloFunk-led night ensemble</li>
+    </ul>
+  </div>
+</div>
 
 </body>
 </html>
