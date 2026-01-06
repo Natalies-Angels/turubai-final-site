@@ -4,11 +4,7 @@
   <meta charset="UTF-8" />
   <title>FABRI × BARAKOA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-
+  <!-- tailwind config -->
   <script>
     tailwind.config = {
       theme: {
@@ -28,7 +24,8 @@
       }
     }
   </script>
-
+<!-- tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -174,7 +171,7 @@
 
 <!-- NILOFUNK -->
 <section class="relative z-40 py-28 bg-black " id="nilofunk">
-  <div class="w-full max-w-6xl mx-auto px-6 space-y-16 fade-in">
+  <div class="w-full max-w-6xl mx-auto px-6 space-y-16 fade-in visible">
 
 
     <h2 class="font-headline text-5xl">The Barakoa Aesthetic Theme: NiloFunk</h2>
@@ -362,25 +359,28 @@
 </footer>
 
 <script>
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add("visible")}
-  })
-},{threshold:.15})
-document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el))
-</script>
-<script>
-  const toggle = document.getElementById('mobileToggle');
-  const menu = document.getElementById('mobileMenu');
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -10% 0px"
+    }
+  );
 
 
-  toggle?.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+  document.querySelectorAll(".fade-in").forEach(el => {
+    observer.observe(el);
   });
+});
 </script>
-
-
 </body>
 </html>
-
 
