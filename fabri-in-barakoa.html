@@ -59,6 +59,9 @@
     {
       scroll-margin-top: 6rem;
     }
+    section {
+      isolation: isolate;
+    }
 
     @media (min-width: 768px) {
       .img-card {
@@ -72,7 +75,7 @@
 <body>
   <!-- ░░░ NAVBAR ░░░ -->
 <header class="fixed top-0 left-0 right-0 z-40 h-16">
-  <nav class="backdrop-blur-xl bg-#0e0e0f">
+  <nav class="md:backdrop-blur-xl bg-baseblack/90">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
 
@@ -170,7 +173,7 @@
 
 
 <!-- NILOFUNK -->
-<section class="py-28 bg-black" id="nilofunk">
+<section class="relative z-10 py-28 bg-black " id="nilofunk">
   <div class="w-full max-w-6xl mx-auto px-6 space-y-16 fade-in">
 
 
