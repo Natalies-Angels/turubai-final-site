@@ -10,6 +10,28 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            baseblack: "#0e0e0f",
+            ember: "#d12a2a",
+            ochre: "#c48a2e",
+            tealdeep: "#0f6a63",
+            bone: "#e8e4d8",
+            graysoft: "#939393"
+          },
+          fontFamily: {
+            display: ["Impact", "Anton", "Arial Black", "sans-serif"],
+            body: ["Inter", "system-ui"],
+          },
+        },
+      },
+    };
+  </script>
+
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -51,7 +73,40 @@
   </style>
 </head>
 
-<body class="bg-black text-white">
+<body class="bg-black text-white text-[17px] leading-relaxed">
+  <!-- ░░░ NAVBAR ░░░ -->
+<header class="fixed top-0 left-0 right-0 z-40">
+  <nav class="backdrop-blur-xl bg-black/40 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+
+        <!-- Navigation -->
+        <div class="hidden sm:flex items-left gap-8 text-graysoft">
+          <a href="fabri.html" class="text-sm hover:text-tealdeep transition">about FABRi</a>
+          <a href="fabri-in-barakoa.html" class="text-sm hover:text-ochre transition">FABRi in barakoa</a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="mobileToggle" class="md:hidden p-2 rounded-md hover:bg-white/10">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-black/60">
+      <div class="px-4 py-4 flex flex-col gap-3">
+          <a href="FABRI\fabri.html" class="text-sm hover:text-tealdeep transition">about FABRi</a>
+          <a href="FABRI\fabri-in-barakoa.html" class="text-sm hover:text-ochre transition">FABRi in barakoa</a>
+      </div>
+    </div>
+
+  </nav>
+</header>
 
   <main class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
 
@@ -76,23 +131,23 @@
 
   </main>
 
-  <section class="max-w-3xl mx-auto px-6 py-24 space-y-20">
+  <section class="max-w-3xl mx-auto px-6 py-24 space-y-20 text-[17px] leading-relaxed">
 
     <!-- How you come in -->
     <div class="fade">
-      <h2 class="text-2xl mb-4">How you come in</h2>
+      <h2 class="text-2xl mb-4">You in Barakoa</h2>
       <p class="text-gray-300 leading-relaxed">
         You participate in Barakoa through a partnership with Fabri as an
-        <span class="text-white">Experience & Style Curator</span>.
+        <span class="text-ochre font-semibold">Experience & Style Curator.</span>
         <br/><br/>
-        This is about shaping the <strong>felt culture</strong> of the experience — how it looks,
+        This is about shaping the <strong class="text-ochre">felt culture</strong> of the experience — how it looks,
         how it moves, and how people carry it with them before and after the gig.
       </p>
     </div>
 
-    <!-- What this involves -->
+    <!-- experience curation -->
     <div class="fade">
-      <h2 class="text-2xl mb-4">What this looks like</h2>
+      <h2 class="text-2xl mb-4">Experience Curation, explained</h2>
       <p class="text-gray-300 leading-relaxed">
         This isn’t a rigid role or a heavy commitment.
         It’s a creative partnership rooted in intuition, taste, and cultural
@@ -101,13 +156,36 @@
         Your presence supports:
       </p>
 
-      <ul class="mt-6 space-y-3 text-gray-300 list-disc list-inside">
-        <li>Shaping the overall aesthetic and emotional tone of Barakoa</li>
+      <ul class="mt-6 mb-6 space-y-3 text-graysoft list-disc list-inside">
+        <li>Co-designing the emotional and sensory journey of the event</li>
+        <li>Helping Barakoa to ensure coherence between sound, movement, environment, and participation</li>
+        <li>Connecting us with aligned creatives and cultural networks where useful</li>
+        <li>Guiding audience interaction, rhythm, and flow within the experience</li>
+      </ul>
+
+      <p>Experience curation ensures that Barakoa is not just seen, but felt.</p>
+    </div>
+
+    <!-- style curation -->
+    <div class="fade">
+      <h2 class="text-2xl mb-4">Style Curation, explained</h2>
+      <p class="text-gray-300 leading-relaxed">
+        Here, you'll help curate the visual and stylistic language of Barakoa as it appears on bodies, 
+        in motion, and within the space.
+        <br/><br/>
+        Your presence supports:
+      </p>
+
+      <ul class="mt-6 space-y-3 text-graysoft list-disc list-inside">
+        <li>Translating NiloFunk principles into styling, silhouettes, and visual codes</li>
         <li>Helping Fabri translate theme into lived experience</li>
-        <li>Connecting aligned creatives and cultural networks where useful</li>
-        <li>Supporting the Style Box logic without needing to be on-ground</li>
+        <li>Guiding costume, dress logic, and adornment across performers and participants</li>
+        <li>Maintaining visual coherence across fashion, movement, and environment</li>
+        <li>Directing the development of a <a href="fabri-in-barakoa.html#lookbook" class="text-ochre underline">Barakoa Lookbook</a> which will serve as the fashion guide for creatives and attendees of Barakoa</li>
+        <li>Ensuring style functions as both expression and masking</li>
       </ul>
     </div>
+
 
     <!-- Communication -->
     <div class="fade">
@@ -130,10 +208,9 @@
 
       <div class="space-y-8 text-sm leading-relaxed">
         <div>
-          <h4 class="font-semibold mb-2">Experience & Style Curator</h4>
+          <h4 class="font-semibold mb-2">Barakoa Creative Direction </h4>
           <p>
-            You’ll align closely with the Experience & Style Curator to ensure that fashion,
-            styling, and cultural atmosphere reinforce one another across the experience.
+            to align emotional intent, narrative, and thematic flow.
           </p>
         </div>
 
@@ -152,9 +229,27 @@
             production, helping maintain coherence across pieces.
           </p>
         </div>
+        <div>
+          <h4 class="font-semibold mb-2">Production & Operations</h4>
+          <p>
+            to translate experiential intent into real-world execution
+          </p>
+        </div>
+
+        <div>
+          <h4><span class="font-semibold mb-2">Fashion Curator</span></h4>
+          <p>
+            You’ll align closely with the Fashion Curator to ensure that fashion,
+            styling, and cultural atmosphere reinforce one another across the experience.
+          </p>
+        </div>
       </div>
     </div>
   </section>
+    <footer class="py-12 text-center text-graysoft text-sm">
+  FABRi © Turubai Tribe — Building memory through material.
+</footer>
+
 
   <!-- scroll script -->
   <script>
