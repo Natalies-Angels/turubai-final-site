@@ -5,7 +5,9 @@
   <title>FABRI × BARAKOA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
   <script src="https://cdn.tailwindcss.com"></script>
+
 
   <script>
     tailwind.config = {
@@ -17,7 +19,6 @@
             graysoft: "#8c8c8c",
             bone: "#e8e4d8",
             ember: "#d12a2a",
-
           },
           fontFamily: {
             headline: ["DM Serif Display", "serif"],
@@ -28,7 +29,9 @@
     }
   </script>
 
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 
   <style>
     body {
@@ -45,14 +48,61 @@
       opacity:1;
       transform:translateY(0);
     }
+    .img-card {
+      height: 440px;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+      .img-card {
+        height: 440px;
+      }
+    }
   </style>
 </head>
 
+
 <body>
+  <!-- ░░░ NAVBAR ░░░ -->
+<header class="fixed top-0 left-0 right-0 z-40">
+  <nav class="backdrop-blur-xl bg-#0e0e0f">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+
+        <!-- Navigation -->
+        <div class="hidden sm:flex items-left gap-8 text-graysoft">
+          <a href="fabri.html" class="text-sm hover:text-tealdeep transition">about FABRi</a>
+          <a href="barakoa.html" class="text-sm hover:text-ochre transition">about barakoa</a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="mobileToggle" class="md:hidden p-2 rounded-md hover:bg-white/10">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-black/60">
+      <div class="px-4 py-4 flex flex-col gap-3">
+          <a href="FABRI\fabri.html" class="text-sm hover:text-tealdeep transition">about FABRi</a>
+      </div>
+    </div>
+
+  </nav>
+</header>
+
 
 <!-- HERO -->
-<section class="min-h-screen flex items-center justify-center text-center px-6">
-  <div class="max-w-4xl fade-in">
+<section class="min-h-screen flex items-center">
+  <div class="w-full max-w-6xl mx-auto px-6 text-center fade-in">
     <h1 class="font-headline text-6xl md:text-8xl mb-8 tracking-tight">
       FABRI × BARAKOA
     </h1>
@@ -60,17 +110,21 @@
   </div>
 </section>
 
+
 <!-- BARAKOA -->
-<section class="py-28 px-6 flex justify-center">
-  <div class="max-w-3xl space-y-6 fade-in">
+<section class="py-28">
+  <div class="w-full max-w-6xl mx-auto px-6 space-y-6 fade-in">
     <h2 class="font-headline text-5xl">Barakoa</h2>
+
 
     <p><a href="barakoa.html" class="underline text-ochre">Barakoa</a> is a masquerade.</p>
     <p>Not in costume alone; but in behaviour, protection, performance, and silence.</p>
     <p>It explores the masks people wear around love, fear, and the quiet things we don’t say — and what happens when those masks are held, softened, or briefly removed.</p>
 
-    <p>Barakoa brings together sound, movement, fashion, and space to ask one central question:</p>
+
+    <p>Barakoa brings together sound, movement, fashion, food, drink, ritual and space to ask one central question:</p>
     <p class="text-ochre text-xl">How do we mask ourselves in order to survive love, fear, and vulnerability?</p>
+
 
     <ul class="list-disc list-inside text-graysoft">
       <li>Six behavioural archetypes, expressed through masks</li>
@@ -79,20 +133,25 @@
       <li>A live, embodied environment</li>
     </ul>
 
+
     <p>Fabri enters Barakoa to give this question a body.</p>
     <p class="italic underline text-ochre"><a href="barakoa.html">Click this for deeper context on Barakoa as a whole.</a></p>
   </div>
 </section>
 
+
 <!-- HOW FABRI ENTERS -->
-<section class="py-28 bg-white text-black px-6 flex justify-center">
-  <div class="max-w-4xl space-y-8 fade-in">
+<section class="py-28 bg-white text-black">
+  <div class="w-full max-w-6xl mx-auto px-6 space-y-8 fade-in">
     <h2 class="font-headline text-5xl">How Fabri Enters Barakoa</h2>
+
 
     <p>Fabri is responsible for <strong class="italic">crafting the physical language of the maskerade</strong>.</p>
     <p>Fabri is responsible for translating Barakoa’s ideas into material form. It explores how masking looks like when it's worn, layered, adjusted, removed, or lived in.</p>
 
+
     <p>Fabri chose to enter Barakoa primarily through fashion and styling because clothing is where masking is most intimate:</p>
+
 
     <ul class="list-disc list-inside text-gray-700">
       <li>it sits on the body</li>
@@ -100,111 +159,110 @@
       <li>it moves with emotion, sound, and time</li>
     </ul>
 
+
     <p>Fashion becomes the first site of meaning.</p>
   </div>
 </section>
 
+
 <!-- NILOFUNK -->
-<section class="py-28 px-6 bg-black flex justify-center">
-  <div class="max-w-6xl space-y-12 fade-in">
+<section class="py-28 bg-black" id="nilofunk">
+  <div class="w-full max-w-6xl mx-auto px-6 space-y-16 fade-in">
+
 
     <h2 class="font-headline text-5xl">The Barakoa Aesthetic Theme: NiloFunk</h2>
 
+
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="h-72 bg-gray-800"></div>
-      <div class="h-72 bg-gray-700"></div>
-      <div class="h-72 bg-gray-800"></div>
+      <div class="img-card"><img src="assets/NF1.jpg" class="w-full h-full object-cover"></div>
+      <div class="img-card"><img src="assets/NF2.jpg" class="w-full h-full object-cover"></div>
+      <div class="img-card"><img src="assets/NF3.jpg" class="w-full h-full object-cover"></div>
     </div>
+
 
     <p class="max-w-3xl">NiloFunk is the aesthetic language guiding Barakoa’s music, fashion and styling.</p>
     <p>It’s a fusion of:</p>
+
+
     <ul class="list-disc list-inside max-w-2xl">
       <li><span class="text-ochre italic">Nilo</span> — Nilotic cultural references featuring traditional motifs across Nile communities</li>
       <li><span class="text-ochre italic">Funk</span> — the bold, expressive silhouettes and textures of 1970s–80s African American funk aesthetics</li>
       <li><span class="text-ochre italic">Contemporary Finish</span> — modern reinterpretation of Nilo and Funk aesthetics, blending traditional elements with contemporary design</li>
     </ul>
 
-    <!-- NILOTIC LOGIC CARDS -->
-    <h3 class="font-headline text-3xl">What Fabri borrows from Nilotic dress logic : <br> <span class="text-ochre">the 'Nilo' in NiloFunk</span></h3>
-    <p>Nilotic communities across the Nile corridor dress with deep awareness of climate, easy movement, ceremony, and protection. </p>
-    <p>Key Nilo principles Fabri draws from:</p>
-    <div class="grid md:grid-cols-3 gap-6">
+
+    <!-- NILO -->
+    <h3 class="font-headline text-3xl">What Fabri borrows from Nilotic dress logic :<br><span class="text-ochre">the 'Nilo' in NiloFunk</span></h3>
+
+
+    <div class="grid md:grid-cols-2 gap-8">
       <div class="bg-white text-black p-6 space-y-4">
-        <div class="h-40 bg-gray-300"></div>
-        <p class="font-semibold">Blanket logic:</p>
-        <p>the use of cloaks, shukas, shawls,(draped, not layered) etc as outerwear for protection, warmth, and modesty</p>
+        <div class="img-card"><img src="assets/blanketLogic.jpg" class="w-full h-full object-contain"></div>
+        <p class="font-semibold text-center">Blanket logic:</p>
+        <p class="text-center">the use of cloaks, shukas, shawls,(draped, not layered) etc as outerwear for protection, warmth, and modesty</p>
       </div>
+
+
       <div class="bg-white text-black p-6 space-y-4">
-        <div class="h-40 bg-gray-300"></div>
-        <p class="font-semibold">Layering:</p>
-        <p>the strategic use of multiple garments to create depth, warmth, and visual interest. Nilotes layer garments to adapt to climate and ceremony.</p>
+        <div class="img-card"><img src="assets/layering.jpg" class="w-full h-full object-contain"></div>
+        <p class="font-semibold text-center">Layering:</p>
+        <p class="text-center">the strategic use of multiple garments to create depth, warmth, and visual interest. Nilotes layer garments to adapt to climate and ceremony.</p>
       </div>
+
+
       <div class="bg-white text-black p-6 space-y-4">
-        <div class="h-40 bg-gray-300"></div>
-        <p class="font-semibold">Flow and volume:</p>
-        <p>clothing that responds to wind, walking, dancing, sitting</p>
+        <div class="img-card"><img src="assets/flowNvolume.jpg" class="w-full h-full object-contain"></div>
+        <p class="font-semibold text-center">Flow and volume:</p>
+        <p class="text-center">clothing that responds to wind, walking, dancing, sitting</p>
       </div>
+
+
       <div class="bg-white text-black p-6 space-y-4">
-        <div class="h-40 bg-gray-300"></div>
-        <p class="font-semibold">Adornment as signal:</p>
-        <p>beads, metal, leather used to mark status, ritual, or moment — and removed when needed</p>
+        <div class="img-card"><img src="assets/adrmnts.png" class="w-full h-full object-contain"></div>
+        <p class="font-semibold text-center">Adornment as signal:</p>
+        <p class="text-center">beads, metal, leather used to mark status, ritual, or moment — and removed when needed</p>
       </div>
     </div>
 
-    <!-- FUNK CARDS -->
-    <h3 class="font-headline text-3xl">What Fabri borrows from Afro-American Funk : <br> <span class="text-ochre">the 'Funk' in NiloFunk</span></h3>
-    <p>Funk brings exaggeration, confidence, and a sense of liberation through bold silhouettes and textures.</p>
-    <div class="grid md:grid-cols-3 gap-6">
+
+    <!-- FUNK -->
+    <h3 class="font-headline text-3xl">What Fabri borrows from Afro-American Funk :<br><span class="text-ochre">the 'Funk' in NiloFunk</span></h3>
+
+
+    <div class="grid md:grid-cols-2 gap-8">
       <div class="bg-white text-black p-6 space-y-4">
-        <div class="h-40 bg-gray-300"></div>
-        <p>bold silhouettes</p>
+        <div class="img-card"><img src="assets/boldSilh.jpg" class="w-full h-full object-contain"></div>
+        <p class="text-center">bold silhouettes</p>
       </div>
+
+
       <div class="bg-white text-black p-6 space-y-4">
-        <div class="h-40 bg-gray-300"></div>
-        <p>flared shapes</p>
+        <div class="img-card"><img src="assets/flare.jpg" class="w-full h-full object-contain"></div>
+        <p class="text-center">flared shapes</p>
       </div>
+
+
       <div class="bg-white text-black p-6 space-y-4">
-        <div class="h-40 bg-gray-300"></div>
-        <p>expressive colour and texture</p>
+        <div class="img-card"><img src="assets/texturesNcolors.jpg" class="w-full h-full object-contain"></div>
+        <p class="text-center">expressive colour and texture</p>
       </div>
+
+
       <div class="bg-white text-black p-6 space-y-4">
-        <div class="h-40 bg-gray-300"></div>
-        <p>performance embedded into everyday wear</p>
+        <div class="img-card"><img src="assets/prfmnc2.jpg" class="w-full h-full object-contain"></div>
+        <p class="text-center">performance embedded into everyday wear</p>
+      </div>
     </div>
-  </div>
-      <p>Nilofunk emerges where functionality meets audacity.</p>
 
-</section>
 
-<!-- MASKS -->
-<section class="py-28 px-6 flex justify-center">
-  <div class="max-w-4xl space-y-8 fade-in">
-    <h2 class="font-headline text-5xl">The Masks Behind The Story</h2>
-    <p>Barakoa is anchored by six behavioural masks:</p>
-    <ul class="list-disc list-inside text-graysoft">
-      <li>The Keeper</li>
-      <li>The Justifier</li>
-      <li>The Silencer</li>
-      <li>The Savior</li>
-      <li>The Mirror</li>
-      <li>The Ghost</li>
-    </ul>
-
-    <p>These masks are not characters — they are patterns people recognise in themselves.</p>
-    <p>Fabri responds to these masks in three ways:</p>
-    <ul class="list-disc list-inside text-graysoft">
-      <li>Costumes for actors and performers — designed to embody each mask’s behaviour</li>
-      <li>Audience masks(for the masquerade) — simplified, wearable interpretations available with tickets</li>
-      <li>Barakoa Fashion Line — a six-look collection that reflects the masks' essence</li>
-    </ul>
-    <p>Attendees will read the mask descriptions and choose the one that feels closest — or select a general mask for those who don’t wish to name themselves.</p>
-    <p>This way, the experience becomes a shared, personal journey of self-discovery.</p>
+    <p>Nilofunk emerges where functionality meets audacity.</p>
   </div>
 </section>
 
 <!-- EVERYTHING -->
-  <section class="py-28 bg-white text-black px-6 flex justify-center">
-    <div class="max-w-4xl fade-in space-y-8 text-lg leading-relaxed">
+  <section class="py-28 bg-white text-black">
+  <div class="w-full max-w-6xl mx-auto px-6">
+    <div class="fade-in space-y-8 text-lg leading-relaxed">
       <h2 class="text-5xl text-left mb-10">How Everything Ties Together</h2>
       <p>
         Fabri applies Nilofunk across the entire experience ... not only on stage.
@@ -255,11 +313,16 @@
         <li>Reflect Nilofunk aesthetics</li>
         <li>interpret love, fear, and quiet through form</li>
       </ul>
-
+    </div>
+  </div>
+  </section>
+  <!-- LOOKBOOK -->
+<section class="bg-white text-black" id="lookbook">
+  <div class="w-full bg-ember text-white py-24">
+    <div class="w-full max-w-6xl mx-auto px-6 space-y-4">
       <h2 class="font-headline text-3xl">THE NILOFUNK LOOKBOOK</h2>
       <p>All of this research, styling logic, and visual language will be documented into a Nilofunk × Barakoa Lookbook.</p>
-      <p>This book serves multiple purposes:</p>
-      <ul class="list-disc list-inside text-ember space-y-2">
+      <ul class="list-disc list-inside">
         <li>A reference guide for the creative team to maintain visual coherence</li>
         <li>An inspiration source for attendees to interpret the dress code</li>
         <li>A record of the collaboration between Fabri and her partners.</li>
@@ -267,20 +330,29 @@
       </ul>
       <p>Creative collaborators involved will be credited as official partners of this lookbook.</p>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- COLLAB -->
-<section class="py-28 px-6 flex justify-center">
-  <div class="max-w-4xl space-y-8 fade-in">
+<section class="py-28">
+  <div class="w-full max-w-6xl mx-auto px-6">
+    <div class="fade-in space-y-8">
     <h2 class="font-headline text-5xl">How We Collaborate</h2>
     <p>Fabri works with curators and fashion houses in clearly defined ways.</p>
     <ul class="list-disc list-inside text-graysoft space-y-2">
-      <li>Curators shape meaning</li>
-      <li>Fashion houses craft</li>
-      <li>Fabri holds alignment</li>
+      <li>Curators shape meaning, coherence, and direction</li>
+      <li>Fashion houses handle the sewing, construction, and execution</li>
+      <li>Fabri holds the system and ensures alignment</li>
     </ul>
   </div>
+  </div>
 </section>
+
+
+<!-- Footer -->
+<footer class="py-12 text-center text-graysoft text-sm">
+  FABRi © Turubai Tribe — Building memory through material.
+</footer>
 
 <script>
 const observer = new IntersectionObserver(entries=>{
@@ -291,5 +363,7 @@ const observer = new IntersectionObserver(entries=>{
 document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el))
 </script>
 
+
 </body>
 </html>
+
