@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PA × BARAKOA — Play OS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            baseblack: "#0e0e0f",
+            ochre: "#c48a2e",
+            graysoft: "#8c8c8c",
+            bone: "#e8e4d8",
+            ember: "#d12a2a",
+          },
+          fontFamily: {
+            headline: ["DM Serif Display", "serif"],
+            body: ["Inter", "system-ui"],
+            cursive: ["Caveat", "cursive"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background:#0e0e0f;
+      color:#f5f5f5;
+      font-family: Inter, system-ui;
+    }
+
+    .fade-in {
+      opacity:0;
+      transform:translateY(24px);
+      transition:all .9s ease;
+    }
+    .fade-in.visible {
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* ---- TORN PAPER ---- */
+    .torn {
+      position:relative;
+      background:#fff;
+      color:#111;
+      padding:4rem 3.5rem;
+      border-radius:6px;
+    }
+
+    .torn:before,
+    .torn:after {
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      height:18px;
+      background:
+        radial-gradient(circle at 10px 10px, transparent 12px, #fff 13px);
+      background-size:20px 20px;
+    }
+
+    .torn:before { top:-18px; }
+    .torn:after {
+      bottom:-18px;
+      transform:rotate(180deg);
+    }
+
+    /* ---- FLOATING NOTES ---- */
+    .note {
+      position:absolute;
+      font-family:Caveat, cursive;
+      font-size:1.25rem;
+      opacity:.45;
+      pointer-events:none;
+      color:#d12a2a;
+    }
+
+    /* ---- WORLD ---- */
+    .world {
+      background:#d12a2a;
+      color:#fff;
+      padding:5rem 4rem;
+    }
+
+    /* ---- STRUCTURE ---- */
+    .structure {
+      background:#f7f4ee;
+      color:#111;
+      padding:5rem 4rem;
+      border-left:4px solid #d12a2a;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center justify-center text-center px-6">
+  <div class="max-w-4xl fade-in">
+    <h1 class="font-headline text-6xl md:text-8xl mb-8 tracking-tight">
+      PERPETRATORS ANONYMOUS × BARAKOA
+    </h1>
+    <p class="text-xl text-graysoft">a play, crafted.</p>
+  </div>
+</section>
+
+<!-- PLAY OS INTRO -->
+<section class="py-32 px-6 flex justify-center bg-bone">
+  <div class="relative max-w-4xl fade-in torn leading-relaxed space-y-6">
+
+    <div class="note" style="top:1rem; right:-3rem;">read slowly</div>
+    <div class="note" style="bottom:3rem; left:-3rem;">this is a system</div>
+
+    <h2 class="font-headline text-5xl">BARAKOA: Love, Fear, and the Quiet</h2>
+    <p class="italic text-graysoft">The Play Operating System (Play OS)</p>
+
+    <h3 class="font-headline text-3xl">What This Play Is</h3>
+    <p>Barakoa: Love, Fear, and the Quiet is a live theatrical work staged inside a Barakoa gig.</p>
+    <p>It is not only a story that unfolds on stage — it is a living system that the audience enters, observes, and moves alongside.</p>
+    <p>The play explores how a human being learns to survive the world by putting on different masks.</p>
+    <p>These masks help us cope with pressure, expectation, danger, and intimacy.</p>
+    <p>Over time, however, the same masks that protect us can also separate us from ourselves.</p>
+
+    <ul class="list-disc list-inside">
+      <li>What does love look like when it is real?</li>
+      <li>What happens to fear when it is managed instead of felt?</li>
+      <li>What becomes of quiet in a world that never stops demanding performance?</li>
+    </ul>
+
+    <p>The play is reflective and intimate, with moments of dry humor and calm directness.</p>
+    <p>Its stylistic influence comes from works like <em>The Wonderful Story of Henry Sugar</em> — clear narration, steady pacing, and a voice that calmly explains even as the meaning grows deeper and more unsettling.</p>
+
+    <h3 class="font-headline text-3xl">The Central Story</h3>
+    <p>The story follows Mwanadamu (MD) — a word that simply means human being.</p>
+    <p>MD moves through the world carrying a wooden backpack known as the Barakoa Bag (B-Bag). Inside the bag are masks.</p>
+
+    <p>At first, the masks feel useful. They make life easier. They reduce friction. They help MD function.</p>
+    <p>Over time:</p>
+
+    <ul class="list-disc list-inside">
+      <li>The masks are used more often</li>
+      <li>Multiple masks begin to operate at once</li>
+      <li>The human underneath becomes harder to access</li>
+    </ul>
+
+    <p>The play does not judge this process.</p>
+    <p>It shows it.</p>
+
+  </div>
+</section>
+
+<!-- ABOUT THE BARAKOA WORLD -->
+<section class="py-32 px-6 flex justify-center">
+  <div class="max-w-4xl fade-in world space-y-6">
+
+    <h2 class="font-headline text-5xl">ABOUT THE BARAKOA WORLD</h2>
+
+    <p>These rules apply to all performances, adaptations, and future stagings of the play.</p>
+
+    <p><strong>Mwanadamu (MD)</strong></p>
+    <ul class="list-disc list-inside">
+      <li>MD represents the unmasked human state</li>
+      <li>MD is slow, vulnerable, and real</li>
+      <li>MD can only exist when no mask is active</li>
+    </ul>
+    <p>When a mask is worn, MD is not present.</p>
+
+    <p><strong>The Masks</strong></p>
+    <p>Masks are full identity systems.</p>
+    <p>When active, they take control of the body and voice.</p>
+    <p>Multiple masks can operate at the same time.</p>
+    <p>When this happens:</p>
+    <ul class="list-disc list-inside">
+      <li>The human presence disappears completely</li>
+      <li>The system becomes efficient but unreachable</li>
+    </ul>
+
+    <p><strong>Love, Fear, and the Quiet</strong></p>
+    <p>There are two versions of these states:</p>
+
+    <p>Real Love, Fear, and Quiet</p>
+    <ul class="list-disc list-inside">
+      <li>MD is present</li>
+      <li>Genuine interaction is possible</li>
+    </ul>
+
+    <p>Illusion Love, Fear, and Quiet</p>
+    <ul class="list-disc list-inside">
+      <li>Masks dominate</li>
+      <li>Everything feels resolved, but nothing truly is</li>
+    </ul>
+
+    <p>This distinction is the emotional engine of the play.</p>
+
+  </div>
+</section>
+
+<!-- STRUCTURE -->
+<section class="py-32 px-6 flex justify-center bg-bone">
+  <div class="max-w-4xl fade-in structure space-y-10">
+
+    <h3 class="font-headline text-4xl">Structure of the Play</h3>
+    <p>Total runtime: approximately 80 minutes.</p>
+    <p>There is no intermission.</p>
+
+    <div>
+      <h4 class="font-headline text-3xl">Act I — Orientation</h4>
+      <p class="italic text-graysoft">“How a human learns to function.”</p>
+    </div>
+
+    <div>
+      <h4 class="font-headline text-3xl">Act II — Escalation</h4>
+      <p class="italic text-graysoft">“When coping becomes control.”</p>
+    </div>
+
+    <div>
+      <h4 class="font-headline text-3xl">Act III — Aftermath</h4>
+      <p class="italic text-graysoft">“What remains when the system is quiet.”</p>
+    </div>
+
+    <p class="italic text-graysoft">
+      This structure is fixed. The system remains.
+    </p>
+
+  </div>
+</section>
+
+<script>
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add("visible")}
+  })
+},{threshold:.15})
+document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el))
+</script>
+
+</body>
+</html>
