@@ -5,7 +5,9 @@
   <title>PA × BARAKOA — Play OS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
   <script src="https://cdn.tailwindcss.com"></script>
+
 
   <script>
     tailwind.config = {
@@ -21,14 +23,17 @@
           fontFamily: {
             headline: ["DM Serif Display", "serif"],
             body: ["Inter", "system-ui"],
-            cursive: ["Caveat", "cursive"]
+            cursive: ["La+Belle+Aurore", "cursive"],
+            script: ["Courier Prime", "monospace"]
           }
         }
       }
     }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 
   <style>
     body {
@@ -36,72 +41,45 @@
       color:#f5f5f5;
       font-family: Inter, system-ui;
     }
-
     .fade-in {
       opacity:0;
-      transform:translateY(24px);
+      transform:translateY(30px);
       transition:all .9s ease;
     }
     .fade-in.visible {
       opacity:1;
       transform:translateY(0);
     }
-
-    /* ---- TORN PAPER ---- */
-    .torn {
-      position:relative;
-      background:#fff;
-      color:#111;
-      padding:4rem 3.5rem;
-      border-radius:6px;
+        .cursive-float { font-family: 'La Belle Aurore', cursive; color: #c48a2e; opacity: 0.6; pointer-events: none; }
+    
+    .torn-edge {
+      position: relative;
+      clip-path: polygon(0% 0%, 5% 2%, 10% 0%, 15% 3%, 20% 0%, 25% 2%, 30% 0%, 35% 3%, 40% 0%, 45% 2%, 50% 0%, 55% 3%, 60% 0%, 65% 2%, 70% 0%, 75% 3%, 80% 0%, 85% 2%, 90% 0%, 95% 3%, 100% 0%, 100% 100%, 95% 98%, 90% 100%, 85% 97%, 80% 100%, 75% 98%, 70% 100%, 65% 97%, 60% 100%, 55% 98%, 50% 100%, 45% 97%, 40% 100%, 35% 98%, 30% 100%, 25% 97%, 20% 100%, 15% 98%, 10% 100%, 5% 97%, 0% 100%);
     }
 
-    .torn:before,
-    .torn:after {
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      height:18px;
-      background:
-        radial-gradient(circle at 10px 10px, transparent 12px, #fff 13px);
-      background-size:20px 20px;
+    .breather-quote {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      border-left: 2px solid #d12a2a;
+      padding-left: 1.5rem;
+      margin: 3rem 0;
     }
 
-    .torn:before { top:-18px; }
-    .torn:after {
-      bottom:-18px;
-      transform:rotate(180deg);
+    .structure-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(196, 138, 46, 0.2);
+      padding: 2rem;
+      position: relative;
     }
 
-    /* ---- FLOATING NOTES ---- */
-    .note {
-      position:absolute;
-      font-family:Caveat, cursive;
-      font-size:1.25rem;
-      opacity:.45;
-      pointer-events:none;
-      color:#d12a2a;
-    }
+  
 
-    /* ---- WORLD ---- */
-    .world {
-      background:#d12a2a;
-      color:#fff;
-      padding:5rem 4rem;
-    }
-
-    /* ---- STRUCTURE ---- */
-    .structure {
-      background:#f7f4ee;
-      color:#111;
-      padding:5rem 4rem;
-      border-left:4px solid #d12a2a;
-    }
   </style>
 </head>
 
+
 <body>
+
 
 <!-- HERO -->
 <section class="min-h-screen flex items-center justify-center text-center px-6">
@@ -113,126 +91,385 @@
   </div>
 </section>
 
-<!-- PLAY OS INTRO -->
-<section class="py-32 px-6 flex justify-center bg-bone">
-  <div class="relative max-w-4xl fade-in torn leading-relaxed space-y-6">
 
-    <div class="note" style="top:1rem; right:-3rem;">read slowly</div>
-    <div class="note" style="bottom:3rem; left:-3rem;">this is a system</div>
+<!-- BARAKOA CONTEXT -->
+<section class="py-28 px-6 flex justify-center bg-baseblack text-bone">
+  <div class="max-w-3xl space-y-6 fade-in">
+    <h2 class="font-headline text-5xl">Barakoa</h2>
 
-    <h2 class="font-headline text-5xl">BARAKOA: Love, Fear, and the Quiet</h2>
-    <p class="italic text-graysoft">The Play Operating System (Play OS)</p>
 
-    <h3 class="font-headline text-3xl">What This Play Is</h3>
-    <p>Barakoa: Love, Fear, and the Quiet is a live theatrical work staged inside a Barakoa gig.</p>
-    <p>It is not only a story that unfolds on stage — it is a living system that the audience enters, observes, and moves alongside.</p>
-    <p>The play explores how a human being learns to survive the world by putting on different masks.</p>
-    <p>These masks help us cope with pressure, expectation, danger, and intimacy.</p>
-    <p>Over time, however, the same masks that protect us can also separate us from ourselves.</p>
+    <p><a href="barakoa.html" class="underline text-ochre">Barakoa</a> is a world built around masking.</p>
+    <p>It starts from a simple observation:</p>
+    <p>that human beings rarely move through life as they are. Instead, we learn to adapt, perform, protect,
+      and manage how we appear in order to survive.</p>
 
-    <ul class="list-disc list-inside">
-      <li>What does love look like when it is real?</li>
-      <li>What happens to fear when it is managed instead of felt?</li>
-      <li>What becomes of quiet in a world that never stops demanding performance?</li>
+
+    <p>In Barakoa, masks are not costumes.</p>
+    <p>They are systems of behavior.</p>
+    <p>They determine how people speak, how they move, how they respond to fear, and how they relate to others.
+      Over time, these masks stop being temporary. They become habitual. Eventually, they replace presence.</p>
+
+
+    <p>Barakoa is not interested in asking why people mask.</p>
+    <ul class="list-disc list-inside text-graysoft space-y-2">
+      <li>It is interested in what masking makes possible,</li>
+      <li>what kinds of relationships masking enables,</li>
+      <li>and what kinds of responsibility masking makes easy to avoid.</li>
     </ul>
 
-    <p>The play is reflective and intimate, with moments of dry humor and calm directness.</p>
-    <p>Its stylistic influence comes from works like <em>The Wonderful Story of Henry Sugar</em> — clear narration, steady pacing, and a voice that calmly explains even as the meaning grows deeper and more unsettling.</p>
 
-    <h3 class="font-headline text-3xl">The Central Story</h3>
-    <p>The story follows Mwanadamu (MD) — a word that simply means human being.</p>
-    <p>MD moves through the world carrying a wooden backpack known as the Barakoa Bag (B-Bag). Inside the bag are masks.</p>
-
-    <p>At first, the masks feel useful. They make life easier. They reduce friction. They help MD function.</p>
-    <p>Over time:</p>
-
-    <ul class="list-disc list-inside">
-      <li>The masks are used more often</li>
-      <li>Multiple masks begin to operate at once</li>
-      <li>The human underneath becomes harder to access</li>
-    </ul>
-
-    <p>The play does not judge this process.</p>
-    <p>It shows it.</p>
-
+    <p>This is the terrain into which Perpetrators Anonymous enters.</p>
   </div>
 </section>
 
-<!-- ABOUT THE BARAKOA WORLD -->
-<section class="py-32 px-6 flex justify-center">
-  <div class="max-w-4xl fade-in world space-y-6">
 
-    <h2 class="font-headline text-5xl">ABOUT THE BARAKOA WORLD</h2>
+<!-- HOW PA ENTERS -->
+<section class="py-28 bg-bone text-baseblack px-6 flex justify-center">
+  <div class="max-w-4xl space-y-8 fade-in">
+    <h2 class="font-headline text-5xl">How Perpetrators Anonymous Enters Barakoa</h2>
 
-    <p>These rules apply to all performances, adaptations, and future stagings of the play.</p>
 
-    <p><strong>Mwanadamu (MD)</strong></p>
-    <ul class="list-disc list-inside">
-      <li>MD represents the unmasked human state</li>
-      <li>MD is slow, vulnerable, and real</li>
-      <li>MD can only exist when no mask is active</li>
-    </ul>
-    <p>When a mask is worn, MD is not present.</p>
+    <p>Perpetrators Anonymous (PA) enters Barakoa through the play.</p>
+    <p>This is how PA participates.</p>
 
-    <p><strong>The Masks</strong></p>
-    <p>Masks are full identity systems.</p>
-    <p>When active, they take control of the body and voice.</p>
-    <p>Multiple masks can operate at the same time.</p>
-    <p>When this happens:</p>
-    <ul class="list-disc list-inside">
-      <li>The human presence disappears completely</li>
-      <li>The system becomes efficient but unreachable</li>
-    </ul>
 
-    <p><strong>Love, Fear, and the Quiet</strong></p>
-    <p>There are two versions of these states:</p>
+    <p>PA is a survivor-centered organization that addresses harm and violence by working with
+      remorseful perpetrators to take accountability, heal, and change their ways—while also
+      advocating for systems and policies that ensure justice.</p>
 
-    <p>Real Love, Fear, and Quiet</p>
-    <ul class="list-disc list-inside">
-      <li>MD is present</li>
-      <li>Genuine interaction is possible</li>
-    </ul>
 
-    <p>Illusion Love, Fear, and Quiet</p>
-    <ul class="list-disc list-inside">
-      <li>Masks dominate</li>
-      <li>Everything feels resolved, but nothing truly is</li>
-    </ul>
+    <p>Barakoa asks what it means to wear a mask.</p>
+    <p>PA responds by staging what happens beneath the mask.</p>
 
-    <p>This distinction is the emotional engine of the play.</p>
 
+    <p>This play is PA’s creative method of holding its central inquiry for the year:</p>
+    <p><em>understanding and humanizing remorseful perpetrators—without excusing harm, without abandoning justice.</em></p>
+
+
+    <p>Not to explain perpetrators.</p>
+    <p>Not to defend them.</p>
+    <p>But to make visible the human processes that make harm possible—and interruptible.</p>
   </div>
 </section>
 
-<!-- STRUCTURE -->
-<section class="py-32 px-6 flex justify-center bg-bone">
-  <div class="max-w-4xl fade-in structure space-y-10">
 
-    <h3 class="font-headline text-4xl">Structure of the Play</h3>
-    <p>Total runtime: approximately 80 minutes.</p>
-    <p>There is no intermission.</p>
+<!-- INTRO CONTAINER (White Minimal with Random Art) -->
+<section class="bg-baseblack text-bone py-32 px-6 relative overflow-hidden">
+  <!-- Floating Cursive Elements -->
+  <div class="cursive-float absolute top-10 right-10 text-3xl rotate-12">human process</div>
+  <div class="cursive-float absolute bottom-20 left-10 text-2xl -rotate-6">the quiet...</div>
+  
+  <div class="max-w-4xl mx-auto fade-in visible">
+    <div class="space-y-12">
+      <div>
+        <h2 class="font-headline text-6xl mb-6">the BARAKOA PLAY: Love, Fear, and the Quiet</h2>
+        <p class="font-script text-ochre uppercase tracking-widest text-sm mb-8">[ PLAY OPERATING SYSTEM ]</p>
+        
+        <h3 class="font-headline text-3xl mb-4">What This Play Is</h3>
+        <p class="text-lg leading-relaxed">Barakoa: Love, Fear, and the Quiet is a live theatrical work staged inside a Barakoa gig. It is not only a story that unfolds on stage — it is a living system that the audience enters, observes, and moves alongside.</p>
+        
+        <div class="breather-quote text-2xl text-ochre">
+          "What does love look like when it is real?"
+        </div>
 
-    <div>
-      <h4 class="font-headline text-3xl">Act I — Orientation</h4>
-      <p class="italic text-graysoft">“How a human learns to function.”</p>
+        <p class="mb-4">The play explores how a human being learns to survive the world by putting on different masks. These masks help us cope with pressure, expectation, danger, and intimacy.</p>
+      </div>
+
+      <div class="pt-10 border-t border-gray-200">
+        <h3 class="font-headline text-3xl mb-4">The Central Story</h3>
+        <p class="mb-6">The story follows <strong>Mwanadamu (MD)</strong> — a word that simply means human being. MD moves through the world carrying a wooden backpack known as the Barakoa Bag (B-Bag). Inside the bag are masks.</p>
+        
+        <ul class="space-y-4 font-script border-l-4 border-ember pl-6">
+          <li class="text-ochre">• The masks are used more often</li>
+          <li class="text-ochre">• Multiple masks begin to operate at once</li>
+          <li class="text-ochre">• The human underneath becomes harder to access</li>
+        </ul>
+      </div>
     </div>
-
-    <div>
-      <h4 class="font-headline text-3xl">Act II — Escalation</h4>
-      <p class="italic text-graysoft">“When coping becomes control.”</p>
-    </div>
-
-    <div>
-      <h4 class="font-headline text-3xl">Act III — Aftermath</h4>
-      <p class="italic text-graysoft">“What remains when the system is quiet.”</p>
-    </div>
-
-    <p class="italic text-graysoft">
-      This structure is fixed. The system remains.
-    </p>
-
   </div>
 </section>
+<!-- ABOUT THE BARAKOA WORLD (Ember Background / Playful) -->
+<section class="bg-ember text-white py-32 px-6 torn-edge relative overflow-hidden">
+  
+  <div class="max-w-4xl mx-auto fade-in">
+    <h1 class="font-headline text-6xl mb-12">THE BARAKOA WORLD</h1>
+    
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="space-y-8 text-xl leading-relaxed">
+        <p>Barakoa is a world built around masking. It starts from a simple observation: human beings rarely move through life as they are.</p>
+        <p>In Barakoa, masks are not costumes. They are <strong>systems of behavior</strong>. They determine how we respond to fear and relate to others.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md p-10 border border-white/20 rotate-2">
+        <h4 class="font-script text-ochre mb-6 uppercase tracking-widest">Inquiry of 2026</h4>
+        <ul class="space-y-4 font-headline text-2xl opacity-90">
+          <li>• What masking enables</li>
+          <li>• Relationships of performance</li>
+          <li>• The ease of avoiding responsibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT THE BARAKOA WORLD (Rugged, Textured, Asymmetrical Container, now Symmetrical Grid) -->
+<section class="bg-baseblack text-white py-32 px-6 relative overflow-hidden">
+    <!-- Background Texture/Overlay for rugged feel -->
+    <div class="absolute inset-0 bg-repeat opacity-20" style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%27www.w3.org width=%27100%27 height=%27100%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%275%27 y=%2710%27 font-size=%2715%27 font-family=%27sans-serif%27 fill=%27%23d12a2a%27 opacity=%270.5%27%3EBARAKOA%3C/text%3E%3C/svg%3E');"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10 fade-in">
+        <h2 class="font-headline text-6xl mb-16 text-center text-ember border-b pb-4 border-ember/50">The Rules of the World (Non-Negotiable)</h2>
+        <p class="text-center italic mb-16 max-w-3xl mx-auto font-script text-lg">These rules apply to all performances, adaptations, and future stagings of the play.</p>
+
+        <!-- Changed to a 2-column grid with equal-sized cards -->
+        <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- MD CARD -->
+            <div class="p-8 bg-ember/10 border border-ember shadow-2xl transform rotate-1 hover:rotate-0 transition duration-300">
+                <h3 class="font-headline text-3xl mb-4 text-ochre">Mwanadamu (MD)</h3>
+                <ul class="list-disc list-inside space-y-3 text-sm opacity-90 font-script">
+                    <li>MD represents the unmasked human state</li>
+                    <li>MD is slow, vulnerable, and real</li>
+                    <li>MD can only exist when no mask is active</li>
+                </ul>
+                <p class="mt-4 text-xs font-script italic">When a mask is worn, MD is not present.</p>
+            </div>
+
+            <!-- MASKS CARD -->
+            <div class="p-8 bg-graysoft/10 border border-graysoft shadow-2xl transform -rotate-2 hover:rotate-0 transition duration-300">
+                <h3 class="font-headline text-3xl mb-4 text-ember">The Masks</h3>
+                <p class="mb-4 text-sm">Masks are not moods or traits; they are full identity systems. When active, they take control of the body and voice.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <ul class="list-disc list-inside space-y-3 text-sm opacity-90 font-script">
+                        <li>Multiple masks can operate at once</li>
+                        <li>The human presence disappears completely</li>
+                    </ul>
+                    <ul class="list-disc list-inside space-y-3 text-sm opacity-90 font-script">
+                        <li>The system becomes efficient but unreachable</li>
+                        <li>Masks never acknowledge MD.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- LOVE, FEAR, QUIET CARD -->
+            <div class="p-8 bg-ochre/10 border border-ochre shadow-2xl transform rotate-3 hover:rotate-0 transition duration-300">
+                <h3 class="font-headline text-3xl mb-4 text-white">Love, Fear, and the Quiet</h3>
+                <p class="mb-4 text-sm">There are two versions of these states:</p>
+                <h4 class="font-headline text-lg text-ochre">Real States:</h4>
+                <ul class="list-disc list-inside space-y-2 text-xs mb-4 font-script">
+                    <li>MD is present</li>
+                    <li>Genuine interaction is possible</li>
+                </ul>
+                <h4 class="font-headline text-lg text-ember">Illusions of States:</h4>
+                <ul class="list-disc list-inside space-y-2 text-xs font-script">
+                    <li>Masks dominate</li>
+                    <li>Everything feels resolved, but nothing truly is</li>
+                </ul>
+                <p class="mt-4 text-xs italic opacity-70">This distinction is the emotional engine of the play.</p>
+            </div>
+
+             <!-- B-BAG CARD -->
+             <div class="p-8 bg-white/5 border border-white/20 shadow-xl transform -rotate-1 hover:rotate-0 transition duration-300">
+                <h3 class="font-headline text-3xl mb-4 text-graysoft">The Barakoa Bag (B-Bag)</h3>
+                <ul class="grid grid-cols-2 gap-3 text-sm opacity-80 font-script">
+                    <li class="col-span-2">The B-Bag is a wooden backpack carried by MD. It is never decorative or casual.</li>
+                    <li>Represents accumulated survival strategies</li>
+                    <li>Represents learned behavior</li>
+                    <li>Represents inherited coping mechanisms</li>
+                </ul>
+                <p class="mt-4 text-xs italic text-ember">When the bag is abandoned, it does not disappear. It waits to be picked up again.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- THE SIX MASKS -->
+ <!-- THE SIX MASKS SECTION (Notebook Sticky Note Style) -->
+<section class="bg-bone text-baseblack py-32 px-6 relative overflow-hidden">
+    
+    <div class="max-w-6xl mx-auto relative z-10 fade-in">
+        <h2 class="font-headline text-6xl mb-4 text-center text-ember">The Six Masks</h2>
+        <p class="text-center italic mb-20 max-w-xl mx-auto text-lg opacity-70">Each mask is a full identity system, a strategy for survival.</p>
+
+        <!-- Grid for Masks (Sticky Notes) -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            
+            <!-- Sticky Note Style Applied -->
+            <!-- Note colors: use bone/light colors as requested by 'notebook sticky note style' -->
+            
+            <!-- Keeper Card (Yellow Note) -->
+            <div class="p-8 bg-yellow-100 text-baseblack shadow-xl transform rotate-1 hover:rotate-0 transition duration-300 relative">
+                <div class="absolute top-0 left-1/2 w-4 h-4 bg-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md"></div> <!-- Pin Mock -->
+                <h3 class="font-headline text-3xl mb-3 text-ember">The Keeper</h3>
+                <p class="text-sm font-script text-graysoft mb-4">[ Mask 1 of 6 ]</p>
+                <p class="text-base font-script leading-relaxed">Survives through <strong>responsibility</strong> and <strong>control</strong>.</p>
+                <p class="mt-4 text-xs italic opacity-70">*Rule: Once worn, MD disappears.*</p>
+            </div>
+
+            <!-- Silencer Card (White Note) -->
+            <div class="p-8 bg-white text-baseblack shadow-xl transform -rotate-2 hover:rotate-0 transition duration-300 relative">
+                <div class="absolute top-0 left-1/2 w-4 h-4 bg-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md"></div>
+                <h3 class="font-headline text-3xl mb-3 text-ember">The Silencer</h3>
+                <p class="text-sm font-script text-graysoft mb-4">[ Mask 2 of 6 ]</p>
+                <p class="text-base font-script leading-relaxed">Survives by reducing noise and <strong>conflict</strong>.</p>
+                <p class="mt-4 text-xs italic opacity-70">*Emerges in chaos.*</p>
+            </div>
+
+            <!-- Ghost Card (Ochre Note - light version) -->
+            <div class="p-8 bg-ochre/20 text-baseblack shadow-xl transform rotate-3 hover:rotate-0 transition duration-300 relative">
+                <div class="absolute top-0 left-1/2 w-4 h-4 bg-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md"></div>
+                <h3 class="font-headline text-3xl mb-3 text-ember">The Ghost</h3>
+                <p class="text-sm font-script text-graysoft mb-4">[ Mask 3 of 6 ]</p>
+                <p class="text-base font-script leading-relaxed">Survives by simply <strong>disappearing</strong>.</p>
+                <p class="mt-4 text-xs italic opacity-70">Security fails to narrate this one.</p>
+            </div>
+
+            <!-- Justifier Card (Yellow Note) -->
+            <div class="p-8 bg-yellow-100 text-baseblack shadow-xl transform -rotate-1 hover:rotate-0 transition duration-300 relative">
+                <div class="absolute top-0 left-1/2 w-4 h-4 bg-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md"></div>
+                <h3 class="font-headline text-3xl mb-3 text-ember">The Justifier</h3>
+                <p class="text-sm font-script text-graysoft mb-4">[ Mask 4 of 6 ]</p>
+                <p class="text-base font-script leading-relaxed">Survives through <strong>explanation</strong>.</p>
+                <p class="mt-4 text-xs italic opacity-70">Often feels "harmless" at first.</p>
+            </div>
+
+            <!-- Saviour Card (White Note) -->
+            <div class="p-8 bg-white text-baseblack shadow-xl transform rotate-2 hover:rotate-0 transition duration-300 relative">
+                <div class="absolute top-0 left-1/2 w-4 h-4 bg-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md"></div>
+                <h3 class="font-headline text-3xl mb-3 text-ember">The Saviour</h3>
+                <p class="text-sm font-script text-graysoft mb-4">[ Mask 5 of 6 ]</p>
+                <p class="text-base font-script leading-relaxed">Survives by being <strong>needed</strong>.</p>
+                <p class="mt-4 text-xs italic opacity-70">Societies reward this mask.</p>
+            </div>
+
+            <!-- Mirror Card (Ochre Note - light version) -->
+            <div class="p-8 bg-ochre/20 text-baseblack shadow-xl transform -rotate-3 hover:rotate-0 transition duration-300 relative">
+                 <div class="absolute top-0 left-1/2 w-4 h-4 bg-red-600 rounded-full transform -translate-x-1/2 -translate-y-1/2 shadow-md"></div>
+                <h3 class="font-headline text-3xl mb-3 text-ember">The Mirror</h3>
+                <p class="text-sm font-script text-graysoft mb-4">[ Mask 6 of 6 ]</p>
+                <p class="text-base font-script leading-relaxed">Survives by <strong>reflection</strong> — it multiplies & destabilizes.</p>
+                <p class="mt-4 text-xs italic opacity-70">All masks coexist here.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STRUCTURE OF THE PLAY (Bone / Serious-Playful) -->
+<section class="bg-bone text-baseblack py-32 px-6 relative">
+  <div class="max-w-5xl mx-auto fade-in">
+    
+    <div class="mb-24 text-center">
+      <h3 class="font-headline text-6xl mb-6">Structure of the Play</h3>
+      <div class="flex flex-wrap justify-center gap-10 font-script text-sm border-y border-black/10 py-6 uppercase tracking-[0.2em]">
+        <span>Total Runtime: ~80m</span>
+        <span>4 Acts</span>
+        <span>16 Scenes</span>
+        <span class="text-ember">No Intermission</span>
+      </div>
+    </div>
+
+    <div class="space-y-24">
+      <!-- ACT I -->
+      <div class="grid md:grid-cols-[250px_1fr] gap-12">
+        <div class="md:sticky md:top-20 h-fit">
+          <h4 class="font-headline text-4xl text-ember leading-none">Act I<br>Orientation</h4>
+          <div class="mt-6 space-y-2 font-script text-xs uppercase text-graysoft">
+            <p>Function: Establish System</p>
+            <p>Tone: Reflective, Funny</p>
+            <p>Duration: ~15m</p>
+          </div>
+        </div>
+        <div class="space-y-8">
+          <div class="structure-card">
+            <h5 class="text-2xl font-headline mb-3">Scene 1.1 — Security Check</h5>
+            <p class="font-script text-xs mb-4 text-ochre">6m | Security, MD (asleep), B-Bag</p>
+            <p class="leading-relaxed">Security introduces themselves as the system that observes and maintains order. MD sleeps on stage, unaware of the narration.</p>
+          </div>
+          <div class="structure-card">
+            <h5 class="text-2xl font-headline mb-3">Scene 1.2 — First Awareness</h5>
+            <p class="font-script text-xs mb-4 text-ochre">9m | Security, MD, B-Bag</p>
+            <p class="leading-relaxed">MD wakes and hears Security for the first time. Security introduces the concept of masks. MD approaches the B-Bag.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACT II -->
+      <div class="grid md:grid-cols-[250px_1fr] gap-12">
+        <div class="md:sticky md:top-20 h-fit">
+          <h4 class="font-headline text-4xl text-ember leading-none">Act II<br>Thesis</h4>
+          <div class="mt-6 space-y-2 font-script text-xs uppercase text-graysoft">
+            <p>Function: Rational Choice</p>
+            <p>Tone: Curious, Ironic</p>
+            <p>Duration: ~25m</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-6">
+          <div class="structure-card">
+            <h5 class="text-2xl font-headline mb-2">2.1 — The Bag Opens</h5>
+            <p class="text-sm opacity-70">Screens activate. Digital cues appear. MD enters "standard procedure."</p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="structure-card border-l-4 border-l-ember">
+              <h5 class="text-xl font-headline mb-2">2.2 — The Keeper</h5>
+              <p class="text-sm">Origin and Function revealed. Once worn, MD disappears into the mask.</p>
+            </div>
+            <div class="structure-card border-l-4 border-l-ember">
+              <h5 class="text-xl font-headline mb-2">2.3 — The Justifier</h5>
+              <p class="text-sm">Mask of argument and calm. Security notes how it feels "harmless."</p>
+            </div>
+          </div>
+          <div class="structure-card">
+            <h5 class="text-2xl font-headline mb-2">2.4 — Mask Three: The Saviour</h5>
+            <p class="text-sm">A mask rewarded by society. MD begins layering masks, exploring multiplicity.</p>
+          </div>
+          <div class="structure-card bg-black text-white">
+            <h5 class="text-2xl font-headline mb-2 text-ochre">2.5 — Leaving with Everything</h5>
+            <p class="text-sm">MD decides not to choose—they take all masks. Security warns: "This is common."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACT III -->
+      <div class="grid md:grid-cols-[250px_1fr] gap-12">
+        <div class="md:sticky md:top-20 h-fit">
+          <h4 class="font-headline text-4xl text-ember leading-none">Act III<br>Chaos</h4>
+          <div class="mt-6 space-y-2 font-script text-xs uppercase text-graysoft">
+            <p>Function: The Cost</p>
+            <p>Tone: Volatile, Exhausting</p>
+            <p>Duration: ~30m</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="structure-card">
+            <h5 class="text-2xl font-headline mb-2">3.1-3.5 — The Environments</h5>
+            <p class="text-sm">From social clubs to professional offices. Masks (The Silencer, The Ghost, The Mirror) emerge without introduction. Security begins to fail.</p>
+          </div>
+          <div class="p-6 bg-white/50 border border-dashed border-black/20 text-center font-cursive text-2xl">
+            "Quiet is real. Security is heard again."
+          </div>
+          <div class="structure-card border-2 border-ember">
+            <h5 class="text-2xl font-headline mb-2">3.6 — Collapse</h5>
+            <p class="text-sm">Masks fall away. MD leaves the bag. A new MD enters and begins the cycle.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACT IV -->
+      <div class="text-center py-20 border-t border-black/10">
+        <h4 class="font-headline text-6xl text-ember mb-6">Act IV — Synthesis / Quiet</h4>
+        <p class="font-script text-sm uppercase mb-12">Scene 4.1 — Parallel Sleep (10m)</p>
+        <div class="max-w-2xl mx-auto space-y-8">
+          <p class="text-xl leading-relaxed">Both MDs sleep on opposite sides of the stage. Security delivers the final monologue: No blame, no closure, just systems continuing.</p>
+          <div class="text-4xl font-headline italic py-10 border-y border-black/20">
+            “The performance ends. The system does not.”
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <script>
 const observer = new IntersectionObserver(entries=>{
@@ -243,5 +480,11 @@ const observer = new IntersectionObserver(entries=>{
 document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el))
 </script>
 
+
 </body>
 </html>
+
+
+
+
+
