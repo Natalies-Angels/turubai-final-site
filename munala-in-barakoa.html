@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Barakoa — Dramaturgy & Script Partnership</title>
+
+  <!-- Fonts -->
+  <link href="fonts.googleapis.com" rel="stylesheet">
+
+  <!-- Tailwind CDN-->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            baseblack: "#0e0e0f",
+            ember: "#d12a2a",
+            ochre: "#c48a2e",
+            tealdeep: "#0f6a63",
+            bone: "#e8e4d8",
+            graysoft: "#939393"
+          },
+          fontFamily: {
+            display: ["Impact", "Anton", "Arial Black", "sans-serif"],
+            body: ["Inter", "system-ui"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+    .fade { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .fade.show { opacity: 1; transform: translateY(0); }
+    @keyframes scrollLine {
+      0% { opacity: 0; transform: translateY(0); }
+      30% { opacity: 1; }
+      60% { opacity: 1; transform: translateY(10px); }
+      100% { opacity: 0; transform: translateY(20px); }
+    }
+    .animate-scroll-line { animation: scrollLine 2.5s ease-in-out infinite; }
+  </style>
+</head>
+
+<body class="bg-black text-white text-[17px] leading-relaxed">
+  <!-- ░░░ NAVBAR ░░░ -->
+  <header class="fixed top-0 left-0 right-0 z-40">
+    <nav class="backdrop-blur-xl bg-black/40 border-b border-white/5">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="hidden sm:flex items-left gap-8 text-graysoft">
+            <a href="PA-in-barakoa.html" class="text-sm hover:text-tealdeep transition">PA in</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+    <!-- Hero -->
+    <section class="max-w-3xl fade show">
+      <p class="text-xs tracking-widest text-gray-400 mb-4 uppercase">
+        Vic Munala × Perpetrators Anonymous x BARAKOA 
+      </p>
+      <h1 class="text-4xl md:text-6xl leading-tight mb-6">
+        Dramaturgy: <br>Script & Narrative
+      </h1>
+    </section>
+    <div id="scroll-indicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/70">
+        <span class="font-serif text-sm text-graysoft tracking-wide mb-2">keep scrolling</span>
+        <span class="block w-px h-8 bg-white/50 animate-scroll-line"></span>
+    </div>
+  </main>
+
+  <section class="max-w-3xl mx-auto px-6 py-24 space-y-20">
+    <!-- How you come in -->
+    <div class="fade show">
+      <h2 class="text-2xl mb-4">You in Barakoa</h2>
+      <p class="text-gray-300 leading-relaxed">
+        You participate in Barakoa through a partnership as a <span class="text-ochre">Dramaturge</span> — but your primary vehicle for this creative catalysis is <span class="text-ochre">Script Writing</span>. 
+      </p>
+      <br>
+      <p class="text-gray-300 leading-relaxed">
+        In this role, you are the architect of the play's linguistic world. You aren't just writing lines; you are building the narrative and intellectual logic that anchors every performance. You shape the <strong>what</strong>, the <strong>why</strong>, and the <strong>how</strong> by translating dramaturgical research into the literal text of the Barakoa Play.
+      </p>
+    </div>
+
+    <!-- What this involves -->
+    <div class="fade show">
+      <h2 class="text-2xl mb-4">Dramaturgy via Script, explained</h2>
+      <p class="text-gray-300 leading-relaxed">
+        As a Script-centered Dramaturge, you bridge the gap between abstract concept and live performance by:
+      </p>
+      <ul class="mt-6 mb-6 space-y-4 text-gray-300 list-disc list-inside">
+        <li><strong class="text-ochre">Building Character Logic:</strong> Developing the internal voice and dialogue for MD and the various "Masks" in the B-Bag.</li>
+        <li><strong class="text-ochre">Structural Rigor:</strong> Organizing scenes and movements to ensure the narrative architecture remains coherent across the 4-act system.</li>
+        <li><strong class="text-ochre">Tonal Consistency:</strong> Maintaining the instructional, calm, yet unsettling voice inspired by stylistic references like <em>Henry Sugar</em>.</li>
+        <li><strong class="text-ochre">Contextual Writing:</strong> Crafting Security’s monologues so they function as both house rules and essential narrative world-building.</li>
+        <li><strong class="text-ochre">Collaborative Refinement:</strong> Working with artistic leads to ensure every word serves the survivor-centered inquiry of Perpetrators Anonymous.</li>
+      </ul>
+      <p class="text-graysoft italic">Your work is where the philosophy of Barakoa becomes audible and actionable for the performers and the audience.</p>
+    </div>
+
+    <!-- What you’ll support -->
+    <div class="fade show">
+      <h2 class="text-2xl mb-4">Your Contribution</h2>
+      <p class="text-gray-300 mb-6">You will support the storytelling ecosystem by:</p>
+      <ul class="space-y-4 text-gray-300 list-none">
+        <li class="flex gap-3"><span class="text-ochre">/</span> Developing the primary script for the live Barakoa experience.</li>
+        <li class="flex gap-3"><span class="text-ochre">/</span> Translating dramaturgical research into performable dialogue and stage directions.</li>
+        <li class="flex gap-3"><span class="text-ochre">/</span> Designing the verbal interactions between the "System" (Security) and the audience.</li>
+        <li class="flex gap-3"><span class="text-ochre">/</span> Reframing accountability and harm through nuanced, context-grounded storytelling.</li>
+        <li class="flex gap-3"><span class="text-ochre">/</span> Refining the script during the rehearsal process to meet the needs of the live environment.</li>
+      </ul>
+    </div>
+
+    <!-- Recognition -->
+    <div class="fade show">
+      <h2 class="text-2xl mb-4">Recognition</h2>
+      <p class="text-gray-300 leading-relaxed">
+        You will be credited as a <strong class="text-ochre">Dramaturge & Script Writer</strong> across all official Barakoa publications, digital platforms, and production credits — acknowledging your dual role in shaping both the meaning and the voice of the work.
+      </p>
+    </div>
+  </section>
+
+  <!-- Who You'll Work With -->
+  <section class="bg-white text-black py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-3xl mb-10 text-left">Who You'll Work Closely With</h3>
+      <div class="grid md:grid-cols-2 gap-10 text-sm leading-relaxed">
+        <div>
+          <h4 class="font-bold border-b border-black/10 pb-2 mb-3 uppercase tracking-wider">Artistic Director & Leads</h4>
+          <p>To align the written word with the overarching vision of masking and human processes.</p>
+        </div>
+        <div>
+          <h4 class="font-bold border-b border-black/10 pb-2 mb-3 uppercase tracking-wider">Performers</h4>
+          <p>To ensure the script is physically resonant and adaptable to the live "gig" environment.</p>
+        </div>
+        <div>
+          <h4 class="font-bold border-b border-black/10 pb-2 mb-3 uppercase tracking-wider">Perpetrators Anonymous (PA)</h4>
+          <p>To ensure the narrative remains anchored in the intellectual architecture of accountability and justice.</p>
+        </div>
+        <div>
+          <h4 class="font-bold border-b border-black/10 pb-2 mb-3 uppercase tracking-wider">Sound & Digital Teams</h4>
+          <p>To integrate the script with the sparse silences and digital cues of the Play OS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 text-center text-graysoft text-sm">
+    Barakoa © NUKe — Shaping narrative through culture.
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
