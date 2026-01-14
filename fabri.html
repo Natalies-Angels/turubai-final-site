@@ -8,6 +8,29 @@
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            baseblack: "#0e0e0f",
+            ember: "#d12a2a",
+            ochre: "#c48a2e",
+            tealdeep: "#0f6a63",
+            bone: "#e8e4d8",
+            graysoft: "#939393"
+          },
+          fontFamily: {
+            display: ["Impact", "Anton", "Arial Black", "sans-serif"],
+            body: ["Inter", "system-ui"],
+          },
+        },
+      },
+    };
+  </script>
+
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -55,6 +78,37 @@
 </head>
 
 <body class="overflow-x-hidden">
+  <!-- ░░░ NAVBAR ░░░ -->
+<header class="fixed top-0 left-0 right-0 z-40">
+  <nav class="backdrop-blur-xl bg-#0e0e0f">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+
+
+        <!-- Navigation -->
+        <div class="hidden sm:flex items-left gap-8 text-graysoft">
+          <a href="fabri-in-barakoa.html" class="text-sm hover:text-tealdeep transition">FABRi in barakoa</a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="mobileToggle" class="md:hidden p-2 rounded-md hover:bg-white/10">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-black/60">
+      <div class="px-4 py-4 flex flex-col gap-3">
+          <a href="fabri-in-barakoa.html" class="text-sm hover:text-tealdeep transition">FABRi in barakoa</a>
+      </div>
+    </div>
+
+  </nav>
+</header>
 
   <!-- HERO -->
   <section class="min-h-screen flex items-center justify-center text-center px-6">
@@ -164,6 +218,10 @@
       </p>
     </div>
   </section>
+  <!-- Footer -->
+<footer class="py-12 text-center text-graysoft text-sm">
+  FABRi © Turubai Tribe — Building memory through material.
+</footer>
 
   <!-- JS Fade In -->
   <script>
