@@ -41,6 +41,11 @@
       color:#f5f5f5;
       font-family: Inter, system-ui;
     }
+    img {
+  max-width: 100%;
+  height: auto;
+}
+
     .fade-in {
       opacity:0;
       transform:translateY(30px);
@@ -102,6 +107,59 @@
     }
     .digital-bracket::before { top: 0; left: 0; }
     .digital-bracket::after { bottom: 0; right: 0; }
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal.show {
+  display: flex;
+}
+
+.modal-box {
+  background: #f5f2ea;
+  padding: 3rem;
+  max-width: 1200px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+.card {
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 1.5rem;
+}
+.card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+@media (max-width: 640px) {
+  .shadow-2xl {
+    transform: none !important;
+  }
+}
+@media (max-width: 640px) {
+  .py-28 { padding-top: 4rem; padding-bottom: 4rem; }
+  .py-32 { padding-top: 5rem; padding-bottom: 5rem; }
+}
+
+
   
 
   </style>
@@ -114,10 +172,11 @@
 <!-- HERO -->
 <section class="min-h-screen flex items-center justify-center text-center px-6">
   <div class="max-w-4xl fade-in">
-    <h1 class="font-headline text-6xl md:text-8xl mb-8 tracking-tight">
+    <h1 class="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-8 tracking-tight">
       PERPETRATORS ANONYMOUS × BARAKOA
     </h1>
-    <p class="text-xl text-graysoft">a play, crafted.</p>
+    <p class="text-base sm:text-lg md:text-xl text-graysoft">a play, crafted.</p>
+
   </div>
 </section>
 
@@ -125,7 +184,8 @@
 <!-- BARAKOA CONTEXT -->
 <section class="py-28 px-6 flex justify-center bg-baseblack text-bone">
   <div class="max-w-3xl space-y-6 fade-in">
-    <h2 class="font-headline text-5xl">Barakoa</h2>
+    <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl
+">Barakoa</h2>
 
 
     <p><a href="barakoa.html" class="underline text-ochre">Barakoa</a> is a world built around masking.</p>
@@ -156,31 +216,95 @@
 <!-- HOW PA ENTERS -->
 <section class="py-28 bg-bone text-baseblack px-6 flex justify-center">
   <div class="max-w-4xl space-y-8 fade-in">
-    <h2 class="font-headline text-5xl">How Perpetrators Anonymous Enters Barakoa</h2>
+    <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl">How Perpetrators Anonymous Enters Barakoa</h2>
 
-
-    <p>Perpetrators Anonymous (PA) enters Barakoa through the play.</p>
+    <p>Perpetrators Anonymous (PA) enters Barakoa through Pandora’s Box...their creative wing and the heart of the gig.</p>
     <p>This is how PA participates.</p>
 
-
-    <p>PA is a survivor-centered organization that addresses harm and violence by working with
-      remorseful perpetrators to take accountability, heal, and change their ways—while also
-      advocating for systems and policies that ensure justice.</p>
-
+    <p>PA is a survivor-centered organization that works with remorseful perpetrators to take accountability, heal, and change—while also advocating for justice and safety for survivors.</p>
 
     <p>Barakoa asks what it means to wear a mask.</p>
-    <p>PA responds by staging what happens beneath the mask.</p>
+    <p id="see-boxes">PA responds by staging what happens beneath the mask.</p>
 
+    <p>Pandora's Box responds by creating space to creatively explore what happens beneath the masks by staging boxes that hold different aspects of this conversation.</p>
+    
+    <button onclick="openModal('pandorasbox')" class="mt-10 border border-black px-6 py-3 hover:bg-black hover:text-bone transition">
+      see the boxes
+    </button>
 
-    <p>This play is PA’s creative method of holding its central inquiry for the year:</p>
+    <p>This play is PA’s method of holding its central inquiry for the year:</p>
     <p><em>understanding and humanizing remorseful perpetrators—without excusing harm, without abandoning justice.</em></p>
 
+    <p >Not to explain perpetrators or defend them. But to make visible the human processes that make harm possible—and interruptible.</p>
 
-    <p>Not to explain perpetrators.</p>
-    <p>Not to defend them.</p>
-    <p>But to make visible the human processes that make harm possible—and interruptible.</p>
+
   </div>
 </section>
+
+<div id="pandorasbox" class="modal">
+  <div class="modal-box text-bone bg-baseblack">
+    <button onclick="closeModal('pandorasbox')" class="mb-8 underline">
+      ✕ Close
+    </button>
+
+    <h3 class="text-3xl mb-10 font-headline">Pandora’s Box</h3>
+
+    <!-- Boxes Grid -->
+    <div class="grid md:grid-cols-2 gap-8 mt-10">
+
+      <div class="p-8 bg-ember/10 border border-ember shadow-2xl transform rotate-1 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3 text-ochre">Boom Box</h5>
+        <p class="text-sm leading-relaxed mb-4">DJ booth and dance floor where sound, rhythm, and energy move the crowd.</p>
+      </div>
+
+      <div class="p-8 bg-graysoft/10 border border-graysoft shadow-2xl transform -rotate-2 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3">Zen Box</h5>
+        <p class="text-sm leading-relaxed">Body–mind–soul wellness: self-care corners, grounding, reflection, medical care, and micro-therapy moments.</p>
+      </div>
+
+      <div class="p-8 bg-ochre/10 border border-ochre shadow-2xl transform rotate-3 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3">Play Box</h5>
+        <p class="text-sm leading-relaxed">Game vendors, card tables, board games, fast interaction points — audience steps into their “utoto” states.</p>
+      </div>
+
+      <div class="p-8 bg-ember/10 border border-ember shadow-2xl transform -rotate-1 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3 text-ochre">Munch Box</h5>
+        <p class="text-sm leading-relaxed">Food pop-ups curated for youth culture: street food, experimental bites, and communal eating zones.</p>
+      </div>
+
+      <div class="p-8 bg-graysoft/10 border border-graysoft shadow-2xl transform rotate-2 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3">Eco Box</h5>
+        <p class="text-sm leading-relaxed">Environment-conscious pop-up, highlighting sustainable practices and mindful consumption.</p>
+      </div>
+
+      <div class="p-8 bg-ochre/10 border border-ochre shadow-2xl transform -rotate-2 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3">Hot Box</h5>
+        <p class="text-sm leading-relaxed">The smoking zone: rolling culture, incense, herbal blends, relaxed hangouts, and a support space for conversation.</p>
+      </div>
+
+      <div class="p-8 bg-ember/10 border border-ember shadow-2xl transform rotate-1 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3 text-ochre">Voice Box</h5>
+        <p class="text-sm leading-relaxed">Exclusive space for discussing art, fashion, culture, and healing while tasting the beers of the day.</p>
+      </div>
+
+      <div class="p-8 bg-graysoft/10 border border-graysoft shadow-2xl transform -rotate-1 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3">Photo Box</h5>
+        <p class="text-sm leading-relaxed">Photobooth experiences to capture moments and memories of the gig.</p>
+      </div>
+
+      <div class="p-8 bg-ember/10 border border-ember shadow-2xl transform rotate-2 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3 text-ochre">Kraft Box</h5>
+        <p class="text-sm leading-relaxed">The fashion world: vendors, designers, and hands-on making, measuring, and cutting of garments and props.</p>
+      </div>
+
+      <div class="p-8 bg-graysoft/10 border border-graysoft shadow-2xl transform -rotate-1 hover:rotate-0 transition duration-300">
+        <h5 class="font-headline text-2xl mb-3">Art Box</h5>
+        <p class="text-sm leading-relaxed">Barakoa’s living gallery: visual artists exploring masking, identity, and presence. Featured artists include Coster Ojwang.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- OS INTRO -->
 <section class="bg-baseblack text-bone py-16 lg:py-32 px-6 relative overflow-hidden">
@@ -207,7 +331,7 @@
     </div>
 
     <!-- MAIN TEXT CONTENT -->
-    <div class="relative z-10 w-full lg:w-3/5 lg:mx-6 px-4 lg:px-12 py-10 max-w-prose">
+    <div class="relative z-10 w-full lg:w-3/5 lg:mx-6 px-4 lg:px-12 py-10 max-w-prose" id="play">
 
       <h2 class="font-headline text-4xl lg:text-6xl mb-6">
         The Barakoa Play: Love, Fear, and the Quiet
@@ -296,7 +420,7 @@
 <section class="bg-ember text-white pt-20 pb-20 px-6 relative overflow-hidden ">
 
   <div class="max-w-4xl mx-auto relative z-10 fade-in">
-    <h2 class="font-headline text-5xl mb-12">THE BARAKOA WORLD</h2>
+    <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl mb-12">THE BARAKOA WORLD</h2>
     
     <div class="grid md:grid-cols-2 gap-16 items-center">
       <div class="space-y-8 text-xl leading-relaxed">
@@ -315,144 +439,16 @@
   </div>
 </section>
 
-<!-- BARAKOA WORLD RULES (Rugged, Textured, Asymmetrical Container, now Symmetrical Grid) -->
-<section class="bg-baseblack text-white py-32 px-6 relative overflow-hidden pb-[460px] border-b border-black/50">
-    <!-- Background Texture/Overlay for rugged feel -->
-    <div class="absolute inset-0 bg-repeat opacity-20" style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%27www.w3.org width=%27100%27 height=%27100%27 viewBox=%270 0 100 100%27%3E%3Ctext x=%275%27 y=%2710%27 font-size=%2715%27 font-family=%27sans-serif%27 fill=%27%23d12a2a%27 opacity=%270.5%27%3EBARAKOA%3C/text%3E%3C/svg%3E');"></div>
-    
-    <div class="max-w-6xl mx-auto relative z-10 fade-in">
-        <h2 class="font-headline text-6xl mb-16 text-center text-ember border-b pb-4 border-ember/50">The Rules of the Barakoa World</h2>
-        <p class="text-center italic mb-16 max-w-3xl mx-auto font-script text-lg">These rules apply to all performances, adaptations, and future stagings of the play.</p>
-
-        <!-- Changed to a 2-column grid with equal-sized cards -->
-        <div class="grid md:grid-cols-2 gap-8">
-            
-            <!-- MD CARD -->
-            <div class="p-8 bg-ember/10 border border-ember shadow-2xl transform rotate-1 hover:rotate-0 transition duration-300">
-                <h3 class="font-headline text-3xl mb-4 text-ochre">Mwanadamu (MD)</h3>
-                <ul class="list-disc list-inside space-y-3 text-sm opacity-90 font-script">
-                    <li>MD represents the unmasked human state</li>
-                    <li>MD is slow, vulnerable, and real</li>
-                    <li>MD can only exist when no mask is active</li>
-                </ul>
-                <p class="mt-4 text-xs font-script italic">When a mask is worn, MD is not present.</p>
-            </div>
-
-            <!-- MASKS CARD -->
-            <div class="p-8 bg-graysoft/10 border border-graysoft shadow-2xl transform -rotate-2 hover:rotate-0 transition duration-300">
-                <h3 class="font-headline text-3xl mb-4 text-ember">The Masks</h3>
-                <p class="mb-4 text-sm">Masks are not moods or traits; they are full identity systems. When active, they take control of the body and voice.</p>
-                <div class="grid grid-cols-2 gap-4">
-                    <ul class="list-disc list-inside space-y-3 text-sm opacity-90 font-script">
-                        <li>Multiple masks can operate at once</li>
-                        <li>The human presence disappears completely</li>
-                    </ul>
-                    <ul class="list-disc list-inside space-y-3 text-sm opacity-90 font-script">
-                        <li>The system becomes efficient but unreachable</li>
-                        <li>Masks never acknowledge MD.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- LOVE, FEAR, QUIET CARD -->
-            <div class="p-8 bg-ochre/10 border border-ochre shadow-2xl transform rotate-3 hover:rotate-0 transition duration-300">
-                <h3 class="font-headline text-3xl mb-4 text-white">Love, Fear, and the Quiet</h3>
-                <p class="mb-4 text-sm">There are two versions of these states:</p>
-                <h4 class="font-headline text-lg text-ochre">Real Love, Fear, and Quiet:</h4>
-                <ul class="list-disc list-inside space-y-2 text-xs mb-4 font-script">
-                    <li>MD is present</li>
-                    <li>MD can hear Security</li>
-                    <li>Genuine interaction is possible</li>
-                </ul>
-                <h4 class="font-headline text-lg text-ochre">Illusions of Love, Fear, and Quiet:</h4>
-                <ul class="list-disc list-inside space-y-2 text-xs font-script">
-                    <li>Masks dominate</li>
-                    <li>Security fades into the background</li>
-                    <li>Everything feels resolved, but nothing truly is</li>
-                </ul>
-                <p class="mt-4 text-xs italic opacity-70">This distinction is the emotional engine of the play.</p>
-            </div>
-
-             <!-- B-BAG CARD -->
-             <div class="p-8 bg-white/5 border border-white/20 shadow-xl transform -rotate-1 hover:rotate-0 transition duration-300">
-                <h3 class="font-headline text-3xl mb-4 text-graysoft">The Barakoa Bag (B-Bag)</h3>
-                    <p>The B-Bag is a wooden backpack carried by MD. Inside the bag, are six masks that
-                        MD puts on to survive different situations.</p>
-                    <p>It represents:</p>
-                    <ul class="list-disc list-inside text-ochre space-y-2 mt-4">
-                        <li> accumulated survival strategies</li>
-                        <li> learned behavior</li>
-                        <li>Represents inherited coping mechanisms</li>
-                    </ul>
-                
-                <p class="mt-4 text-xs italic text-bone">When the bag is abandoned, it does not disappear. It waits to be picked up again.</p>
-            </div>
-
-            <!-- SECURITY CARD -->
-             <div class="p-8 bg-white/5 border border-white/20 shadow-xl transform -rotate-1 hover:rotate-0 transition duration-300">
-                <h3 class="font-headline text-3xl mb-4 text-graysoft">Security (Narrator)</h3>
-                <p>Security is the narrator of the story. It is a constant presence, always watching, always listening.</p>
-                <p>It is the voice that explains the story of the play as it unfolds. </p>
-                <p></p>
-
-                
-                <p class="mt-4 text-xs italic text-bone">When the bag is abandoned, it does not disappear. It waits to be picked up again.</p>
-            </div>
-
-
-        </div>
-    </div>
-<!-- BOTTOM IMAGE RAIL -->
-<div class="absolute bottom-0 w-full h-[300px] flex items-end overflow-hidden">
-
-
-  <div class="relative w-1/4">
-    <img
-      src="assets\download (2).jfif"
-      class="h-[260px] w-full object-cover rotate-[-7deg] origin-bottom opacity-20 -translate-x-[-2px]"
-    />
-  </div>
-
-
-  <div class="relative w-1/4">
-    <img
-      src="assets\download (3).jfif"
-      class="h-[220px] w-full object-cover rotate-[12deg] origin-bottom opacity-40 -translate-x-[-4px]"
-    />
-  </div>
-
-
-  <div class="relative w-1/4">
-    <img
-      src="assets\download (4).jfif"
-      class="h-[280px] w-full object-cover rotate-[-5deg] origin-bottom opacity-40 -translate-x-[-6px]"
-    />
-  </div>
-
-
-  <div class="relative w-1/4">
-    <img
-      src="assets\download (5).jfif"
-      class="h-[240px] w-full object-cover rotate-[10deg] origin-bottom opacity-40 -translate-x-[-8px]"
-    />
-  </div>
-
-
-</div>
-
-
-
-</section>
 
  <!-- THE SIX MASKS SECTION (Notebook Sticky Note Style) -->
 <section class="bg-baseblack text-bone py-32 px-6 relative overflow-hidden">
     
     <div class="max-w-6xl mx-auto relative z-10 fade-in">
-        <h2 class="font-headline text-6xl mb-4 text-center text-ember">The Six Masks</h2>
+        <h2 class="font-headline text-4xl sm:text-5xl md:text-6xl mb-4 text-center text-ember" id="masks">The Six Masks</h2>
         <p class="text-center italic mb-20 max-w-xl mx-auto text-lg opacity-70">There are only six masks in the world of Barakoa. <br>Each mask is a full identity system, a strategy for survival.</p>
 
         <!-- Grid for Masks (Sticky Notes) -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <!-- Sticky Note Style Applied -->
             <!-- Note colors: use bone/light colors as requested by 'notebook sticky note style' -->
@@ -528,279 +524,13 @@
 </section>
 
 
-<!-- WRAPPER TO PREVENT HORIZONTAL SWIPE -->
-<div class="overflow-x-clip w-full">
-
-  <!-- HENRY SUGAR FEATURE SECTION -->
-  <section class="bg-ember text-baseblack py-20 lg:py-40 px-6 relative overflow-hidden">
-      
-      <div class="max-w-6xl mx-auto relative z-10">
-
-          <!-- On mobile: Stacked layout | On Desktop: Flex container for absolute children -->
-          <div class="flex flex-col lg:flex-row justify-center items-center relative">
-              
-              <!-- Left: Text Block -->
-              <!-- Reduced mobile rotation to prevent edges from clipping -->
-              <div class="relative lg:absolute w-full lg:w-5/12 p-8 lg:p-12 bg-[#f4e8d1] text-stone-900 shadow-2xl transform -rotate-1 lg:-rotate-3 lg:left-10 lg:mt-[35%] z-20 order-1 lg:order-none max-w-full">
-                  <h3 class="font-headline text-2xl lg:text-3xl mb-6 border-b pb-2 border-stone-900/30">Stylistic Reference: The Wonderful Story of Henry Sugar</h3>
-                  <div class="font-script space-y-4 text-sm lg:text-base leading-relaxed">
-                      <p>The play draws tonal influence from The Wonderful Story of Henry Sugar in method, not story.</p>
-                      <p>It is an elegant tale of obsession, discipline, and the moral implications of acquiring extraordinary wealth and knowledge.
-                        In Henry Sugar, events are explained calmly by the narrator as they unfold. 
-                      </p>
-                      <p>
-                        The Narrator speaks the most. Actors don't speak constantly...just in select scenes.
-                      </p>
-                      <p>
-                        We borrowed this.
-                      </p>
-                    
-                      <p class="mt-4 text-sm italic opacity-70 border-l-2 border-stone-900/20 pl-4">The steady, instructional voice creates tension by remaining composed even as the implications deepen.</p>
-                  </div>
-              </div>
-
-              <!-- Right: Stacked Image -->
-              <!-- lg: properties restore your exact overlapping big-screen position -->
-              <div class="relative lg:absolute w-full lg:w-5/12 lg:right-10 lg:top-1/2 transform lg:translate-y-[-5%] rotate-1 lg:rotate-3 shadow-2xl z-10 order-2 lg:order-none mt-10 lg:mt-0 max-w-full">
-                  <div class="border-[8px] lg:border-[12px] border-[#d4c5a9] bg-white overflow-hidden">
-                      <img src="assets\henrySugar.PNG" alt="Henry Sugar inspired image" class="w-full h-auto object-cover">
-                  </div>
-              </div>
-
-          </div>
-      </div>
-      
-      <!-- Big screen spacing: Active only on large viewports -->
-      <div class="hidden lg:block h-[500px]"></div>
-
-  </section>
-</div>
-
-<!-- STRUCTURE OF THE PLAY (Bone / Serious-Playful) -->
-<section class="bg-baseblack text-bone py-32 px-6 relative border-b border-ember">
-  <div class="max-w-5xl mx-auto fade-in">
-    
-    <div class="mb-24 text-center">
-      <h3 class="font-headline text-6xl mb-6">Structure of the Play</h3>
-      <div class="flex flex-wrap justify-center gap-10 font-script text-sm border-y border-black/10 py-6 uppercase tracking-[0.2em]">
-        <span>Total Runtime: ~80m</span>
-        <span>4 Acts</span>
-        <span>16 Scenes</span>
-        <span class="text-ember">embedded Intermission</span>
-      </div>
-    </div>
-
-    <div class="space-y-24">
-      <!-- ACT I -->
-      <div class="grid md:grid-cols-[250px_1fr] gap-12">
-        <div class="md:sticky md:top-20 h-fit">
-          <h4 class="font-headline text-4xl text-ember leading-none">Act I<br>Orientation</h4>
-          <div class="mt-6 space-y-2 font-script text-xs uppercase text-graysoft">
-            <p>Function: Establish System</p>
-            <p>Tone: Reflective, Funny</p>
-            <p>Duration: ~15m</p>
-          </div>
-        </div>
-        <div class="space-y-8">
-          <div class="structure-card">
-            <h5 class="text-2xl font-headline mb-3">Scene 1.1 — Security Check</h5>
-            <p class="font-script text-xs mb-4 text-ochre">6m | Security, MD (asleep), B-Bag</p>
-            <p class="text-sm">Security introduces themselves as Security — the system that observes, names, and maintains order. They speak to the audience directly, casually folding in house rules, audience interaction instructions, and digital cues as part of their monologue.</p>
-            <p class="text-sm">Security introduces MD, Love Fear and the Quiet, and the idea that narration can be heard only when MD is present and aware</p>
-            <p class="text-sm">MD sleeps throughout. The B-Bag is visible but unopened.</p>
-
-            <p>End Beat:</p>
-            <p>MD wakes.</p>
-          </div>
-          <div class="structure-card">
-            <h5 class="text-2xl font-headline mb-3">Scene 1.2 — First Awareness</h5>
-            <p class="font-script text-xs mb-4 text-ochre">9m | Security, MD, B-Bag</p>
-            <p class="text-sm">MD wakes and hears Security for the first time. Security introduces the concept of masks. MD approaches the B-Bag.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ACT II -->
-      <div class="grid md:grid-cols-[250px_1fr] gap-12">
-        <div class="md:sticky md:top-20 h-fit">
-          <h4 class="font-headline text-4xl text-ember leading-none">Act II<br>Thesis</h4>
-          <div class="mt-6 space-y-2 font-script text-xs uppercase text-graysoft">
-            <p>Function: Rational Choice</p>
-            <p>Tone: Curious, Ironic</p>
-            <p>Duration: ~25m</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 gap-6">
-          <div class="structure-card">
-            <h5 class="text-2xl font-headline mb-2">2.1 — The Bag Opens</h5>
-            <p class="text-sm opacity-70">MD opens the B-Bag for the first time.</p>
-            <p class="text-sm opacity-70">Security explains how the digital system works:</p>
-            <ul class="list-disc list-inside text-ochre space-y-2 mt-6">
-              <li>Screens activate</li>
-              <li>QR codes appear</li>
-              <li>Notification sounds cue attention</li>
-          </div>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="structure-card border-l-4 border-l-ember">
-              <h5 class="text-xl font-headline mb-2">2.2 — Mask One Reveal: The Keeper</h5>
-              <p class="text-sm">The Keeper’s profile appears on screens and phones as Narrator describes them.</p>
-            </div>
-            <div class="structure-card border-l-4 border-l-ember">
-              <h5 class="text-xl font-headline mb-2">2.3 — The Justifier</h5>
-              <p class="text-sm">The Justifier is introduced through language and argument.</p>
-              <p class="text-sm">They speak smoothly, convincingly, and calmly.</p>
-              <p class="text-sm">Security explains how Justifier masks often feel “harmless.”</p>
-              <p class="text-sm">MD tries the Justifier mask on.</p>
-            </div>
-          </div>
-          <div class="structure-card">
-            <h5 class="text-2xl font-headline mb-2">2.4 — Mask Three: The Saviour</h5>
-            <p class="text-sm">The Saviour appears as generous, useful, admired.</p>
-            <p class="text-sm">Security notes how societies reward this mask.</p>
-            <p class="text-sm">MD layers the Saviour over one other mask briefly — introducing the idea of multiple masks at once.</p>
-          </div>
-          <div class="structure-card">
-            <h5 class="text-2xl font-headline mb-2 text-bone">2.5 — Leaving with Everything</h5>
-            <p class="text-sm">MD decides not to choose—they take all masks. Security warns: "This is common."</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ACT III -->
-      <div class="grid md:grid-cols-[250px_1fr] gap-12">
-        <div class="md:sticky md:top-20 h-fit">
-          <h4 class="font-headline text-4xl text-ember leading-none">Act III<br>Chaos</h4>
-          <div class="mt-6 space-y-2 font-script text-xs uppercase text-graysoft">
-            <p>Function: The Cost</p>
-            <p>Tone: Volatile, Exhausting</p>
-            <p>Duration: ~30m</p>
-          </div>
-        </div>
-        <div class="space-y-4">
-          <div class="structure-card">
-            <h5 class="text-2xl font-headline mb-2">The Environments</h5>
-            <p class="text-sm">From social clubs to professional offices. Masks (The Silencer, The Ghost, The Mirror) emerge without introduction. Security begins to fail.</p>
-          </div>
-          <div class="structure-card">
-            <h5 class="text-2xl font-headline mb-2">3.1 — Two masks appear. </h5>
-            <p class="text-sm">MD is present but stationery. Close to the masks but not included</p>
-          </div>
-          <div class="structure-card">
-            <h5 class="text-2xl font-headline mb-2">3.1.1 — MD in the transition room.</h5>
-            <p class="text-sm">This is a liminal state. For example, if MD is in a social club, 
-              they might visit the restroom, and when they return, they find that the scenes
-            transitioned to scene 3.2</p>
-            <p class="text-sm">Because of the change of environment, MD may need to wear another mask upon their return from the restroom.</p>
-          </div>
-          
-          <div class="structure-card border-2 border-ember">
-            <h5 class="text-2xl font-headline mb-2">3.2 — Environment 2</h5>
-            <p class="text-sm">Two other masks appear.</p>
-            <p class="text-sm">MD is too far away, inactive in the scene...barely noticeable. </p>
-            <p class="text-sm">
-              Their presence is minimal, almost imperceptible.</p>
-          </div>
-          <div class="structure-card border-2 border-ember">
-            <h5 class="text-2xl font-headline mb-2">3.2.1 — Liminal Scene</h5>
-            <p class="text-sm">Another liminal state, where MD leaves the environment,
-              and returns to a new environment, wearing another mask</p>
-          </div>
-           <div class="structure-card border-2 border-ember">
-            <h5 class="text-2xl font-headline mb-2">3.3 — 3.5 Loop goes on</h5>
-            <p class="text-sm">Multiple environments and masks continue to appear and disappear in a cyclical pattern.</p>
-          </div>
-
-          <div class="structure-card border-2 border-ember">
-            <h5 class="text-2xl font-headline mb-2">3.6 —The Collapse</h5>
-            <p class="text-sm">MD becomes weary of the cycle. The B-Bag has become heavy.</p>
-            <p class="text-sm">MD takes off the bag, places it down, and leaves the scene without it.</p>
-            <p class="text-sm">A new MD walks on stage and sees the bag. They look at it, lift it, and place it on their own back. The stage is split, showing both MD's scenes.</p>
-
-          </div>
-
-
-        </div>
-      </div>
-
-</section>
-<!-- ACT IV N ETC -->
-<section class="bg-baseblack text-bone py-32 px-6 relative border-b border-ember">
-    <div class="max-w-5xl mx-auto fade-in">
-
-        <!-- ACT IV -->
-      <div class="grid md:grid-cols-[250px_1fr] gap-12">
-        <div class="md:sticky md:top-20 h-fit">
-          <h4 class="font-headline text-4xl text-ember leading-none">Act IV<br>Synthesis / Quiet</h4>
-          <div class="mt-6 space-y-2 font-script text-xs uppercase text-graysoft">
-            <p>Function: Reframe, not resolve</p>
-            <p>Tone: Calm, unsettling, observational</p>
-            <p>Duration: ~10m</p>
-          </div>
-        </div>
-        <div class="space-y-8">
-          <div class="structure-card">
-            <h5 class="text-2xl font-headline mb-3">Scene 4.1 — Parallel Sleep</h5>
-            <p class="font-script text-xs mb-4 text-ochre">10m | Security, MD (original), New MD, B-Bag</p>
-            
-            <div class="border-l-2 border-ochre/30 pl-6 space-y-4">
-              <p class="text-sm font-script text-ember uppercase tracking-widest">On Stage:</p>
-              <ul class="text-sm grid grid-cols-2 gap-2 opacity-80">
-                <li>• Security</li>
-                <li>• MD (original)</li>
-                <li>• New MD</li>
-                <li>• B-Bag</li>
-              </ul>
-
-              <p class="text-sm font-script text-ember uppercase tracking-widest mt-6">What Happens:</p>
-              <p class="leading-relaxed">
-                Both MDs sleep on opposite sides of the stage. The B-Bag rests with the new MD, signifying the transfer of the system. 
-                Security delivers the final monologue—devoid of blame or closure—observing the cycle as a continuous state of being.
-              </p>
-
-              <div class="bg-ember/5 p-4 border border-ember/20 mt-6">
-                <p class="font-script text-xs text-ember mb-2">FINAL LINE (OS RULE):</p>
-                <p class="text-xl font-headline">“The performance ends. The system does not.”</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-<!-- Final Note -->
-  <div class="mt-20 p-12 border-2 border-dashed border-ember text-center">
-    
-    <!-- Editorial Paragraph Section -->
-    <!-- The following content is styled as a simple editorial paragraph -->
-    <div class="max-w-2xl mx-auto text-left font-body text-lg leading-relaxed space-y-6 text-base">
-          <p class=" mb-4">The above serves as the template to build the Barakoa play. <br>To make the play even more interactive, the following elements are included:</p>
-
-      <p>
-        <strong class="text-ember">Audience Interaction:</strong> Audience participation is built into the world of the play. Security may invite the audience to scan a code, read a profile, or notice a specific detail. Participation never changes the outcome; it changes awareness. Choosing not to participate is also part of the system.
-      </p>
-      <p>
-        <strong class="text-ember">Sound, Silence, and Digital Space:</strong> Sound and silence are treated as material. Early scenes are sparse and quiet, while chaos builds density and overlap. Liminal moments drop sound dramatically. Digital tools support understanding, not spectacle. Everything serves clarity.
-      </p>
-      <p>
-        <strong class="text-ember">Breaking the Fourth Wall:</strong> The play breaks the fourth wall through direct address, allowing characters to speak directly to the audience. This technique is used to create a sense of intimacy and immediacy, drawing the audience into the narrative.
-      </p>
-    </div>
-    
-  </div>
-  <p class="leading-relaxed mt-12" >With proper implementation of these interactive elements; plus the creativity behind this,
-     the play becomes a living system where the audience is not just a passive observer but an active participant in shaping the narrative experience.</p>
-    </div>
-  </div>
-</div>
-</section>
 
 
 <!-- COLLAB -->
 <section class="py-28 bg-bone text-baseblack">
   <div class="w-full max-w-6xl mx-auto px-6">
     <div class="fade-in space-y-8">
-      <h2 class="font-headline text-5xl">How We Collaborate</h2>
+      <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl">How We Collaborate</h2>
       <p>Perpetrators Anonymous (PA) works with dramaturges and creative leads in clearly defined ways.</p>
       
       <ul class="list-disc list-inside text-baseblack space-y-2">
@@ -828,6 +558,14 @@ const observer = new IntersectionObserver(entries=>{
   })
 },{threshold:.15})
 document.querySelectorAll(".fade-in").forEach(el=>observer.observe(el))
+</script>
+<script>
+function openModal(id){
+  document.getElementById(id).classList.add("show");
+}
+function closeModal(id){
+  document.getElementById(id).classList.remove("show");
+}
 </script>
 
 
