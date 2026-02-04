@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>How You Come In — Ciiku × Barakoa</title>
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        baseblack: "#0e0e0f",
+        ember: "#d12a2a",
+        ochre: "#c48a2e",
+        tealdeep: "#0f6a63",
+        bone: "#e8e4d8",
+        graysoft: "#8c8c8c"
+      },
+      fontFamily: {
+        display: ["Impact","Anton","Arial Black","sans-serif"],
+        body: ["Inter","system-ui"]
+      }
+    }
+  }
+}
+</script>
+
+
+<style>
+.rule { height:1px; background:rgba(255,255,255,.12); margin:4rem 0; }
+.letter p { margin-bottom:1.8rem; line-height:1.7; }
+.side-nav a { display:block; margin-bottom:.75rem; opacity:.6; }
+.side-nav a:hover { opacity:1; }
+
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2rem;
+}
+
+
+.partner-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 1.5rem;
+  transform: rotate(var(--r));
+  transition: all .2s ease;
+}
+
+
+.partner-card:hover {
+  transform: rotate(0deg) scale(1.03);
+  border-color: rgba(255,255,255,0.35);
+}
+
+
+.partner-name {
+  font-family: Impact, sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: .05em;
+}
+
+
+.partner-link {
+  font-size: .75rem;
+  margin-top: .5rem;
+  opacity: .6;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal.show { display: flex; }
+
+
+.modal-box {
+  background: #0e0e0f;
+  padding: 3rem;
+  max-width: 900px;
+  width: 90%;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+</style>
+</head>
+
+
+<body class="bg-baseblack text-gray-200 font-body antialiased">
+
+
+<!-- SIDE NAV -->
+<aside class="fixed top-0 left-0 h-full w-56 px-6 py-16 border-r border-white/10 side-nav hidden lg:block">
+  <p class="text-xs uppercase tracking-widest text-graysoft mb-6">On this page</p>
+  <a href="#letter">Dear Ciiku Dancers</a>
+  <a href="#what">What is Barakoa</a>
+  <a href="#why">Why Barakoa</a>
+  <a href="#experience">The Experience</a>
+  <a href="#flow">Event Flow</a>
+  <a href="#you">Where You Come In</a>
+  <a href="#minds">The Minds</a>
+  <a href="#partners">Partners</a>
+  <a href="#close">Close</a>
+</aside>
+
+
+<main class="ml-0 lg:ml-56 px-8 sm:px-12 md:px-20 max-w-[1100px]">
+
+
+<!-- LETTER -->
+<section id="letter" class="pt-32 pb-24">
+  <p class="uppercase tracking-widest text-xs text-graysoft mb-4">to our beloved cultural bearers</p>
+  <h1 class="font-display text-[4.5rem] leading-none text-bone mb-10">
+    Dear Ciiku,<br>we'd like to build with you
+  </h1>
+
+
+  <div class="letter max-w-2xl pt-10">
+    <p>
+      We are <strong>Barakoa</strong>: a cultural ritual built inside
+      <a href="index.html" class="underline text-ember">Turubai</a> and
+      <a href="nuke.html" class="underline text-ember">NUKe</a>.
+      We work at the intersection of music, theatre, fashion, food, ritual,psychology and underground culture.
+    </p>
+    <p>We’re reaching out because we deeply respect how you treat your craft. One of us has followed your work 
+      virtually for years, drawn to the consistency of your vision and how you continue to honor it, through the unpredictability of life.
+    </p>
+    <p>That sensitivity — the ability to stay grounded, attentive, and intentional amid complexity — is central to what Barakoa is trying to explore.</p>
+  </div>
+</section>
+
+
+<div class="rule"></div>
+
+
+<!-- WHAT -->
+<section id="what" class="pb-24">
+  <h2 class="font-display text-5xl text-bone mb-10">What is Barakoa?</h2>
+
+
+  <div class="letter max-w-2xl">
+    <p>
+      Barakoa is a <strong class="text-ochre">(23+) immersive popup experience in Eldoret.</strong>
+      A temporary world built from <a href="pa-in-barakoa-dlt.html#see-boxes" class="text-ochre underline">temporary boxes.</a>
+    </p>
+
+
+    <p>
+      It is a space to explore emotional masks. The ways we hide our true feelings from ourselves and others.
+    </p>
+
+    <p>
+      Barakoa is a ritual of release.
+      A container to express what we often suppress in daily life:
+      vulnerability, tenderness, fear, longing, and love.
+    </p>
+
+    <p>
+      It is designed for adults who are ready to engage emotionally, creatively, and physically — 
+      without spectacle, without pressure, and without needing to perform clarity.
+    </p>
+    <p>
+      Through live music, <a href="pa-in-barakoa-dlt.html">theatre,</a> fashion, installations, and ritual play,
+      Barakoa creates space to soften what we suppress.
+    </p>
+
+
+    <p>
+      Core Message for Barakoa 2026:<br>
+      <strong class="text-ochre">Love, Fear & the Quiet.</strong>
+    </p>
+
+    <p class="italic underline text-ochre"><a href="pa-in-barakoa-dlt.html">Click this for deeper context on the live theatre</a></p>
+
+  </div>
+
+
+  <h3 id="why" class="font-display text-3xl text-bone mt-16 mb-6">Why Barakoa?</h3>
+
+
+  <div class="letter max-w-2xl">
+    
+    <p>
+      Barakoa is a Swahili word for masks.
+      The ones we wear to survive. To belong.
+      To stay safe.
+      To be seen...or to disappear.
+    </p>
+
+    <p>
+      In daily life, these masks are often invisible to us. 
+      We wear them instinctively, switching them on and off 
+      depending on where we are, who we’re with, and what 
+      we fear losing.
+    </p>
+
+    <p>
+      Barakoa exists to bring awareness to these masks,
+      and let them soften through art.
+    </p>
+
+    <p>
+      For this edition, the experience is shaped around <strong><a href="pa-in-barakoa-dlt.html#masks" class="underline text-ochre">six emotional masks </a></strong>
+       that many of us move through in relationships, community, and solitude.
+    </p>
+
+    <p>
+      Barakoa is a ritual for our times.
+      A space to feel deeply, express honestly, and connect authentically.
+    </p>
+  </div>
+</section>
+
+
+<div class="rule"></div>
+
+
+<!-- EXPERIENCE -->
+<section id="experience" class="pb-24">
+  <h2 class="font-display text-5xl text-bone mb-10">The Barakoa Experience</h2>
+
+
+  <div class="letter max-w-2xl">
+    <p><strong>Teaser Gig:</strong> private, invite-only teaser version.</p>
+    <p><strong>Main Gig:</strong> full ceremony.<span class="text-ochre font-bold"></span> Open to the public.</p>
+  </div>
+
+
+  <div id="flow" class="mt-12 flex gap-6">
+    <button onclick="openModal('febEventModal')" class="bg-ochre text-black px-8 py-6 font-bold">
+      Teaser Flow
+    </button>
+    <button onclick="openModal('juneEventModal')" class="bg-tealdeep text-bone px-8 py-6 font-bold">
+      Main Gig Flow
+    </button>
+  </div>
+
+      <p class="italic underline text-ochre mt-12"><a href="https://drive.google.com/file/d/1oGzeuU6nGp6v6ECsWc3y0JUtmAte5w7f/view?usp=sharing">Click this for deeper context on the event flow</a></p>
+
+</section>
+
+
+<div class="rule"></div>
+
+
+<!-- WHERE YOU COME IN -->
+<section id="you" class="pb-24">
+  <h2 class="font-display text-5xl text-bone mb-10">Why You, Specifically</h2>
+
+
+  <div class="letter max-w-2xl">
+    <p>
+      Because of how you think and move under pressure.
+    </p>
+    <p>
+        We’re drawn to your eccentric way of thinking and executing.
+    </p>
+    <p>You have a clear, disciplined way of handling complexity — staying calm, precise, 
+      and intentional even when situations are shifting.</p>
+    <p>For Barakoa, we need someone who can hold many moving parts at once and keep people aligned without noise.</p>
+    <p class="text-bone mb-10 italic">
+      That’s why we’re reaching out to you.
+    </p>
+       
+      <h3 id="why" class="font-display text-3xl text-bone mt-16 mb-6">Where You Come In</h3>
+      <p>We’d love to invite you to come on board as <strong class="text-ochre">Traffic & Communications Manager, </strong>supporting the management, curating, and operations teams to ensure clarity, coordination, and calm execution, while also managing social media flow prepared by the content team.</p>
+      <p>This is what this looks like:</p>
+    
+    <p class="text-ochre font-bold text-2xl">Pre-Gig (Virtual / Planning)</p>
+    <p>Your role before the gig: </p>   
+     <ul class="space-y-2 ">
+        <li>• Organize operational flow data </li>
+        <li>• Build and distribute internal communication templates and scripts for management, ops, artists, and volunteers</li>
+        <li>• Manage timing of social media updates prepared by the content team</li>
+        <li>• Anticipate confusion and prepare contingency instructions for the management and operations teams</li>
+    </ul> <br /><br/>  
+    <p><strong class="text-ochre underline">Outcome:</strong></p>
+    <p>Management and operations teams have clear instructions, contingency plans, and messaging ready before the audience or performers arrive.</p>
+
+    <p class="text-ochre font-bold text-2xl">Peri-Gig (On-Ground / Execution)</p>
+    <p>Your role during the gig:</p>     
+     <ul class="space-y-2 ">
+        <li>• Monitor live movement of audience, artists, and crew</li>
+        <li>• Relay real-time operational updates to management, curating, and ops teams</li>
+        <li>• Ensure social media updates go out at the right time, in alignment with the team</li>
+        <li>• Adjust instructions dynamically to emerging situations, keeping teams coordinated and informed</li>
+    </ul> <br /><br/>  
+
+    <p><strong class="text-ochre underline">Outcome:</strong></p>
+    <p>The event flows seamlessly. Teams and audience experience Barakoa without confusion, disruption, or friction.</p>
+
+    <p class="text-ochre font-bold text-2xl">Post-Gig (Debrief & Intelligence)</p>
+    <p>Your role post-gig:</p>
+     
+     <ul class="space-y-2 ">
+        <li>• Collect feedback on operational flow and communication effectiveness</li>
+        <li>• Document lessons learned and update protocols, scripts, and social media management guides</li>
+        <li>• Provide actionable insights for management to improve future Barakoa events</li>
+    </ul> <br /><br/>  
+
+    <p><strong class="text-ochre underline">Outcome:</strong></p>
+    <p>Management has a clear understanding of successes, areas for improvement, and refined processes for upcoming editions.</p>
+
+
+
+</section>
+
+<div class="rule"></div>
+
+
+<!-- MINDS -->
+<section id="minds" class="pb-24 mt-20">
+  <h2 class="font-display text-5xl text-bone mb-10">The Minds Behind This</h2>
+  <p class="max-w-2xl text-graysoft">NUKe · Turubai · Qoded · Zen Keg · Perpetrators Anonymous · FABRi</p>
+</section>
+
+<div class="rule"></div>
+
+
+
+<!-- CLOSE -->
+<section class="w-full px-6 py-20 fade bg-white text-baseblack">
+  <div class="max-w-3xl mx-auto space-y-6">
+    <p>
+     Ciiku, we see you. We see your passion, your grit, and your commitment to creativity. You've put in the hours, and it shows in the the quality of your work.
+    </p>
+    <p>This is what drew us to you.</p>
+    <p>If this resonates, let us know and we can set up a virtual conversation to explore alignment, care, and energy exchange.</p>
+    <p class="mt-8 font-semibold">— Barakoa × Turubai Studios</p>
+  </div>
+</section>
+
+
+<footer class="py-12 text-center text-gray-500 text-xs">
+Barakoa — A Turubai Lab Ritual
+</footer>
+
+
+</main>
+
+
+<script>
+function openModal(id){ document.getElementById(id).classList.add("show"); }
+function closeModal(id){ document.getElementById(id).classList.remove("show"); }
+</script>
+
+<!-- FEB EVENT MODAL -->
+<div id="febEventModal" class="modal">
+  <div class="modal-box">
+    <button onclick="closeModal('febEventModal')" class="mb-6 underline text-graysoft">
+      ✕ CLOSE
+    </button>
+
+
+    <h3 class="font-display text-4xl text-bone mb-6">
+     Teaser Gig (Early May)
+    </h3>
+
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      A private, invite-only gathering for collaborators.
+      This is where we test sound, flow, pacing, and emotional temperature.
+    </p>
+
+
+    <ul class="space-y-2 text-gray-400">
+      <li>• Meet & Greet</li>
+      <li>• Sound & Mic Check</li>
+      <li>• Live experimentation</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- JUNE EVENT MODAL -->
+<div id="juneEventModal" class="modal">
+  <div class="modal-box">
+    <button onclick="closeModal('juneEventModal')" class="mb-6 underline text-graysoft">
+      ✕ CLOSE
+    </button>
+
+
+    <h3 class="font-display text-4xl text-bone mb-6">
+      Main Gig (June 19th & 20th)
+    </h3>
+
+
+    <p class="text-gray-300 leading-relaxed mb-4">
+      The full Barakoa experience.
+      All boxes active. Theatre, fashion, music, ritual, release.
+    </p>
+
+
+    <ul class="space-y-2 text-gray-400">
+      <li>• Marketplace + pop-ups</li>
+      <li>• Theatre ritual</li>
+      <li>• NiloFunk-led night ensemble</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
+
+
